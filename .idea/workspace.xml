@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="">
+    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="about route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,14 +152,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605590565124</updated>
-      <workItem from="1605590566492" duration="1057000" />
+      <workItem from="1605590566492" duration="1409000" />
     </task>
+    <task id="LOCAL-00001" summary="about route">
+      <created>1605591834773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605591834774</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="about route" />
+    <option name="LAST_COMMIT_MESSAGE" value="about route" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="144" y="79" key="DiffContextDialog" timestamp="1605591860908">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1605591860908" />
     <state x="592" y="354" key="Github.ShareDialog" timestamp="1605591163766">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -169,5 +184,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="465" y="162" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1605591174807" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605591864627">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605591864627" />
   </component>
 </project>
