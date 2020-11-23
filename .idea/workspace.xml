@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Initial config">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,8 @@
       <workItem from="1605594620014" duration="197000" />
       <workItem from="1605597834618" duration="41000" />
       <workItem from="1605678402522" duration="508000" />
-      <workItem from="1606121423586" duration="689000" />
+      <workItem from="1606121423586" duration="2822000" />
+      <workItem from="1606156647630" duration="1759000" />
     </task>
     <task id="LOCAL-00001" summary="about route">
       <created>1605591834773</created>
@@ -191,7 +192,28 @@
       <option name="project" value="LOCAL" />
       <updated>1605594793381</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial config">
+      <created>1606122877421</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606122877421</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial config">
+      <created>1606123463650</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606123463650</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial config">
+      <created>1606123942324</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606123942324</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,29 +249,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="465" y="162" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1605591174807" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1606122693934">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1606144754175">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606122693934" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1606122693922">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606144754175" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1606144754173">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1606122693922" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1606122693921">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1606144754172" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1606144754169">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1606122693921" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1606122693924">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1606144754169" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1606144754174">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1606122693924" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605594796885">
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1606144754174" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1606123944565">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605594796885" />
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606121991963">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606123944565" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606142688764">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1606121991963" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1606142688764" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1606123031525">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1606123031525" />
   </component>
 </project>
