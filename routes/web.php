@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function () {
-    return 'index';
+    return view('index');
 });
 
 Route::get('/home', function () {
-    return 'home';
+    return view('home');
 });
