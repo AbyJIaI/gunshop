@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return 'about';
+Route::get('/index', function () {
+    return 'index';
+});
+
+Route::get('/home', function () {
+    return 'home';
 });
