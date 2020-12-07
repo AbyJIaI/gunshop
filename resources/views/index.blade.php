@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/owl.theme.css" type="text/css" media="all">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="{{asset('css/fontawesome-all.css')}}" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
           rel="stylesheet">
@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
                 <h1 class="logo-w3layouts">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('index') }}">
                         Gunshop </a>
                 </h1>
             </div>
@@ -75,22 +75,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="wrap">
                         <h5 class="text-center mb-4">Login Now</h5>
                         <div class="login p-5 bg-dark mx-auto mw-100">
-                            <form action="#" method="post">
+                            <form action="{{ route('login') }}" method="post">
+                                @csrf
                                 <div class="form-group">
-                                    <label class="mb-2">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
+                                    <label class="mb-2">{{ __('E-Mail Address') }}</label>
+                                    <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="mb-2">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
+                                    <label class="mb-2">{{ __('Password') }}</label>
+                                    <input type="password" id="exampleInputPassword1" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-check mb-2">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <input type="checkbox" class="form-check-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+                                <div class="form-group">
 
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
+                                    @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    @endif
+                                </div>
+                                <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
                             </form>
                         </div>
                         <!---->
@@ -1451,7 +1474,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="row galsses-grids pt-lg-5 pt-3">
                 <div class="col-lg-6 galsses-grid-left">
                     <figure class="effect-lexi">
-                        <img src="images/banner4.jpg" alt="" class="img-fluid">
+                        <img src="img/banner2.jpg" alt="" class="img-fluid">
                         <figcaption>
                             <h3>Editor's
                                 <span>Pick</span>
@@ -1462,7 +1485,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-lg-6 galsses-grid-left">
                     <figure class="effect-lexi">
-                        <img src="images/banner1.jpg" alt="" class="img-fluid">
+                        <img src="img/banner1.jpg" alt="" class="img-fluid">
                         <figcaption>
                             <h3>Editor's
                                 <span>Pick</span>
@@ -1672,44 +1695,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--jQuery-->
 <script src="js/jquery-2.2.3.min.js"></script>
-<!-- newsletter modal -->
-<!-- Modal -->
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-center p-5 mx-auto mw-100">
-                <h6>Join our newsletter and get</h6>
-                <h3>50% Off for your first Pair of Eye wear</h3>
-                <div class="login newsletter">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label class="mb-2">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="" required="">
-                        </div>
-                        <button type="submit" class="btn btn-primary submit mb-4">Get 50% Off</button>
-                    </form>
-                    <p class="text-center">
-                        <a href="#">No thanks I want to pay full Price</a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<script>
-    $(document).ready(function () {
-        $("#myModal").modal();
-    });
-</script>
-<!-- // modal -->
 
 <!--search jQuery-->
 <script src="js/modernizr-2.6.2.min.js"></script>
