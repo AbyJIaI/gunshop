@@ -326,7 +326,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h4>404</h4>
             <p>This link dead link</p>
             <form action="#" method="post">
-                <input class="serch" type="search" name="serch" placeholder="Search here" required="">
+                <input class="search" type="search" name="search" placeholder="Search here" required="">
                 <button class="btn1">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>

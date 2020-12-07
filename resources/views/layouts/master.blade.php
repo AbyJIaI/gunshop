@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
                 <h1 class="logo-w3layouts">
-                    <a class="navbar-brand" href="{{ route('index') }}">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         Gunshop </a>
                 </h1>
             </div>
@@ -155,12 +155,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link ml-lg-0" href="index.html">Home
+                        <a class="nav-link ml-lg-0" href="{{ route('home') }}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="{{ route('about')}} ">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -186,10 +186,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <h5>View more pages</h5>
                                             </li>
                                             <li class="mt-2">
-                                                <a href="about.html">About</a>
+                                                <a href="{{ route('about') }}">About</a>
                                             </li>
                                             <li>
-                                                <a href="customer.blade.php">Customers</a>
+                                                <a href="{{ route('customer') }}">Customers</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -388,19 +388,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <ul class="links">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ route('home') }}">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="{{ route('about') }}">About</a>
                     </li>
                     <li>
-                        <a href="404.html">Error</a>
+                        <a href="{{ route('404') }}">Error</a>
                     </li>
                     <li>
-                        <a href="shop.blade.php">Shop</a>
+                        <a href="{{ route('shop') }}">Shop</a>
                     </li>
                     <li>
-                        <a href="contact.blade.php">Contact Us</a>
+                        <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>

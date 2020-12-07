@@ -15,18 +15,38 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
-
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::get('/customer', function () {
+    return view('customer');
+})->name('customer');
+
+Route::get('/404', function () {
+    return view('404');
+})->name('404');
+
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/single', function () {
+    return view('single');
+})->name('single');
+
+Route::get('/payment', function () {
+    return view('payment');
+})->name('payment');
+
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
