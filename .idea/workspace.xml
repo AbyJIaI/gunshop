@@ -19,9 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Initial config">
+    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Make routes available by path">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gunshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gunshop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +46,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,6 +160,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kP7qM0OczB7yHaaJjGzAusvfYl" />
@@ -176,7 +195,10 @@
       <workItem from="1605597834618" duration="41000" />
       <workItem from="1605678402522" duration="508000" />
       <workItem from="1606121423586" duration="2822000" />
-      <workItem from="1606156647630" duration="1759000" />
+      <workItem from="1606156647630" duration="1871000" />
+      <workItem from="1607248031067" duration="797000" />
+      <workItem from="1607251221678" duration="2476000" />
+      <workItem from="1607333623543" duration="3772000" />
     </task>
     <task id="LOCAL-00001" summary="about route">
       <created>1605591834773</created>
@@ -213,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606123942324</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Make routes available by path">
+      <created>1606158538902</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606158538902</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,13 +263,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="about route" />
     <MESSAGE value="Initial config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial config" />
+    <MESSAGE value="Make routes available by path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make routes available by path" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1605597875165">
+    <state x="474" y="369" key="ComposerInitDialogKey" timestamp="1607334562385">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1605597875165" />
+    <state x="474" y="369" key="ComposerInitDialogKey/0.0.1440.900@0.0.1440.900" timestamp="1607334562385" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1607251531286">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607251531286" />
     <state x="592" y="354" key="Github.ShareDialog" timestamp="1605591163766">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -249,30 +283,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="465" y="162" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1605591174807" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1606144754175">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1607335100939">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606144754175" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1606144754173">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607335100939" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1607335100936">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1606144754172" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1606144754169">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607335100936" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1607335100936">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1606144754169" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1606144754174">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607335100936" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1607335100937">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1606144754174" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1606123944565">
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607335100937" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1606158541627">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606123944565" />
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606142688764">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606158541627" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607337601578">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1606142688764" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607337601578" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1606123031525">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
