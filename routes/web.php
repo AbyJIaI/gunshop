@@ -25,4 +25,8 @@ Route::get('/index', function () {
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');

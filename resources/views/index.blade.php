@@ -36,6 +36,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="row">
             <div class="col-md-3 top-info text-left mt-lg-4">
                 <h6>Need Help</h6>
+                @if(Auth::user())
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button type="submit">LOGOUT</button>
+                    </form>
+                @endif
                 <ul>
                     <li>
                         <i class="fas fa-phone"></i> Call</li>
@@ -155,12 +161,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link ml-lg-0" href="index.html">Home
+                        <a class="nav-link ml-lg-0" href="{{route('home')}}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="{{route('about')}}">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
