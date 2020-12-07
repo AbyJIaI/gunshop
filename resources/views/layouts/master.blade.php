@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul>
                     <li>
                         <i class="fas fa-phone"></i> Call</li>
-                    <li class="number-phone mt-3">12345678099</li>
+                    <li class="number-phone mt-3">8 7272 098 9808</li>
                 </ul>
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
@@ -308,7 +308,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.blade.php">Contact</a>
+                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                     </li>
                 </ul>
 
@@ -329,8 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>About Us</h3>
                 </div>
                 <div class="footer-text">
-                    <p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at
-                        tellus. Nulla porttitor accumsana tincidunt.</p>
+                    <p>"Gunshop" - SHOP of hunting, sporting weapons and fishing goods IN ALMATY</p>
                     <ul class="footer-social text-left mt-lg-4 mt-3">
 
                         <li class="mx-2">
@@ -372,12 +371,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="contact-info">
                     <h4>Location :</h4>
-                    <p>0926k 4th block building, king Avenue, New York City.</p>
+                    <p>34/a, st. Manasa, Almaty.</p>
                     <div class="phone">
                         <h4>Contact :</h4>
-                        <p>Phone : +121 098 8907 9987</p>
+                        <p>Phone : +7272 098 9808</p>
                         <p>Email :
-                            <a href="mailto:info@example.com">info@example.com</a>
+                            <a href="mailto:info@example.com">support@gunshop.kz</a>
                         </p>
                     </div>
                 </div>
@@ -421,7 +420,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="copyright-w3layouts mt-4">
-            <p class="copy-right text-center ">&copy; 2018 Goggles. All Rights Reserved | Design by
+            <p class="copy-right text-center ">&copy; 2020 Gunshop. All Rights Reserved | Design by
                 <a href="http://w3layouts.com/"> W3layouts </a>
             </p>
         </div>

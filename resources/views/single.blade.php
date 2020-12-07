@@ -229,7 +229,7 @@
 														<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s5.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+																<a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														<span class="product-new-top">New</span>
@@ -240,7 +240,7 @@
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.blade.php">Fastrack Aviator </a>
+																		<a href="{{ route('single') }}">Fastrack Aviator </a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money ">$325.00</span>
@@ -303,7 +303,7 @@
 														<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s6.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+																<a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														<span class="product-new-top">New</span>
@@ -314,7 +314,7 @@
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.blade.php">MARTIN Aviator </a>
+																		<a href="{{ route('single') }}">MARTIN Aviator </a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money ">$425.00</span>
@@ -377,7 +377,7 @@
 														<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s7.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+																<a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														<span class="product-new-top">New</span>
@@ -388,7 +388,7 @@
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.blade.php">Royal Son Aviator </a>
+																		<a href="{{ route('single') }}">Royal Son Aviator </a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money ">$425.00</span>
@@ -462,7 +462,7 @@
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.blade.php">Irayz Butterfly </a>
+																		<a href="{{ route('single') }}">Irayz Butterfly </a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money ">$281.00</span>
@@ -525,7 +525,7 @@
 														<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s9.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+																<a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														<span class="product-new-top">New</span>
@@ -536,7 +536,7 @@
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.blade.php">Jerry Rectangular </a>
+																		<a href="{{ route('single') }}">Jerry Rectangular </a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money ">$525.00</span>
@@ -610,7 +610,7 @@
 															<div class="grid_meta">
 																<div class="product_price">
 																	<h4>
-																		<a href="single.blade.php">Herdy Wayfarer </a>
+																		<a href="{{ route('single') }}">Herdy Wayfarer </a>
 																	</h4>
 																	<div class="grid-price mt-2">
 																		<span class="money ">$325.00</span>

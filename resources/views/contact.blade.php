@@ -35,9 +35,7 @@
 							</div>
 							<div class="col-md-9 address-right text-left">
 								<h6>Address</h6>
-								<p> California, USA
-
-								</p>
+								<p> California, USA </p>
 							</div>
 						</div>
 
@@ -51,10 +49,8 @@
 								<h6>Email</h6>
 								<p>Email :
 									<a href="mailto:example@email.com"> mail@example.com</a>
-
 								</p>
 							</div>
-
 						</div>
 					</div>
 					<div class="col-lg-4 address-grid">
@@ -64,7 +60,7 @@
 							</div>
 							<div class="col-md-9 address-right text-left">
 								<h6>Phone</h6>
-								<p>+1 234 567 8901</p>
+								<p>+7 7272 098 9808</p>
 
 							</div>
 

@@ -13,36 +13,36 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <div class="carousel-caption text-center">
-                            <h3>Men’s eyewear
-                                <span>Cool summer sale 50% off</span>
+                            <h3>
+                                <span></span>
                             </h3>
-                            <a href="shop.blade.php" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+                            <a href="{{ route('shop') }}" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
                         </div>
                     </div>
                     <div class="carousel-item item2">
                         <div class="carousel-caption text-center">
-                            <h3>Women’s eyewear
-                                <span>Want to Look Your Best?</span>
+                            <h3>
+                                <span></span>
                             </h3>
-                            <a href="shop.blade.php" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+                            <a href="{{ route('shop') }}" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 
                         </div>
                     </div>
                     <div class="carousel-item item3">
                         <div class="carousel-caption text-center">
-                            <h3>Men’s eyewear
-                                <span>Cool summer sale 50% off</span>
+                            <h3>
+                                <span></span>
                             </h3>
-                            <a href="shop.blade.php" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+                            <a href="{{ route('shop') }}" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 
                         </div>
                     </div>
                     <div class="carousel-item item4">
                         <div class="carousel-caption text-center">
-                            <h3>Women’s eyewear
-                                <span>Want to Look Your Best?</span>
+                            <h3>
+                                <span></span>
                             </h3>
-                            <a href="shop.blade.php" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+                            <a href="{{ route('shop') }}" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                         <div class="product-googles-info googles">
                             <div class="men-pro-item">
                                 <div class="men-thumb-item">
-                                    <img src="images/s1.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('../assets/img/s1.jpg') }}" class="img-fluid" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.blade.php" class="link-product-add-cart">Quick View</a>
@@ -140,7 +140,7 @@
                         <div class="product-googles-info googles">
                             <div class="men-pro-item">
                                 <div class="men-thumb-item">
-                                    <img src="images/s2.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('../assets/img/s2.png') }}" class="img-fluid" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.blade.php" class="link-product-add-cart">Quick View</a>
@@ -154,7 +154,7 @@
                                         <div class="grid_meta">
                                             <div class="product_price">
                                                 <h4>
-                                                    <a href="single.blade.php">Opium (Grey)</a>
+                                                    <a href="{{ route('single') }}">Opium (Grey)</a>
                                                 </h4>
                                                 <div class="grid-price mt-2">
                                                     <span class="money ">$325.00</span>
@@ -212,10 +212,10 @@
                         <div class="product-googles-info googles">
                             <div class="men-pro-item">
                                 <div class="men-thumb-item">
-                                    <img src="images/s3.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('../assets/img/s3.jpg') }}" class="img-fluid" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
                                         </div>
                                     </div>
                                     <span class="product-new-top">New</span>
@@ -226,7 +226,7 @@
                                         <div class="grid_meta">
                                             <div class="product_price">
                                                 <h4>
-                                                    <a href="single.blade.php">Kenneth Cole</a>
+                                                    <a href="{{ route('single') }}">Kenneth Cole</a>
                                                 </h4>
                                                 <div class="grid-price mt-2">
                                                     <span class="money ">$575.00</span>
@@ -283,7 +283,7 @@
                         <div class="product-googles-info googles">
                             <div class="men-pro-item">
                                 <div class="men-thumb-item">
-                                    <img src="images/s4.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('../assets/img/s4.jpg') }}" class="img-fluid" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.blade.php" class="link-product-add-cart">Quick View</a>
@@ -360,7 +360,7 @@
                         <div class="product-googles-info googles">
                             <div class="men-pro-item">
                                 <div class="men-thumb-item">
-                                    <img src="images/m1.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('../assets/img/s5.jpg') }}" class="img-fluid" alt="">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.blade.php" class="link-product-add-cart">Quick View</a>
