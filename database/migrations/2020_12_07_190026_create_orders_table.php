@@ -18,7 +18,6 @@ class CreateOrdersTable extends Migration
             $table->double('amount');
             $table->boolean('is_delivered')->default(false);
             $table->string('address');
-            $table->timestamps();
         });
     }
 

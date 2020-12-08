@@ -197,10 +197,7 @@
                                                 <button type="submit" class="googles-cart pgoogles-cart">
                                                     <i class="fas fa-cart-plus"></i>
                                                 </button>
-
-
                                             </form>
-
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>

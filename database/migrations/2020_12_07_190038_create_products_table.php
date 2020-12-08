@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->double('price')->default(0);
             $table->integer('amount')->default(0);
 //            $table->binary('image');
-            $table->timestamps();
         });
     }
 

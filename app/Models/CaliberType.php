@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CaliberType extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name'];
+
+    public $timestamps = false;
 }

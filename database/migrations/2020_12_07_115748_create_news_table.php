@@ -19,7 +19,6 @@ class CreateNewsTable extends Migration
             $table->string('description');
             $table->date('posted_date')->useCurrent();
 //            $table->binary('image');
-            $table->timestamps();
         });
     }
 

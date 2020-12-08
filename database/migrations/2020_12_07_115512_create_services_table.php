@@ -17,7 +17,6 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name');
             $table->double('price')->default(0)->unsigned();
-            $table->timestamps();
         });
     }
 

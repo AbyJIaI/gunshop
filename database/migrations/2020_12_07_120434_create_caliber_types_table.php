@@ -16,7 +16,6 @@ class CreateCaliberTypesTable extends Migration
         Schema::create('caliber_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamps();
         });
     }
 

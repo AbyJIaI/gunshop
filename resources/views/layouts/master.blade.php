@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Goggles Ecommerce Category Bootstrap responsive Web Template | Home :: w3layouts</title>
+    <title>Gunshop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -40,12 +40,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <i class="fas fa-phone"></i> Call</li>
                     <li class="number-phone mt-3">8 7272 098 9808</li>
-                    @if(Auth::user())
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit">LOGOUT</button>
-                        </form>
-                    @endif
                 </ul>
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
@@ -81,46 +75,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="wrap">
                         <h5 class="text-center mb-4">Login Now</h5>
                         <div class="login p-5 bg-dark mx-auto mw-100">
-                            <form action="{{ route('login') }}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label class="mb-2">{{ __('E-Mail Address') }}</label>
-                                    <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                            @if(Auth::user())
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit">LOGOUT</button>
+                                </form>
+                            @else
+                                <form action="{{ route('login') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label class="mb-2">{{ __('E-Mail Address') }}</label>
+                                        <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label class="mb-2">{{ __('Password') }}</label>
-                                    <input type="password" id="exampleInputPassword1" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-2">{{ __('Password') }}</label>
+                                        <input type="password" id="exampleInputPassword1" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
-                                <div class="form-check mb-2">
-                                    <input type="checkbox" class="form-check-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <div class="form-group">
+                                        @enderror
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    </div>
+                                    <div class="form-group">
 
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                    @endif
-                                </div>
-                                <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
-                            </form>
+                                        @if (Route::has('password.request'))
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                {{ __('Forgot Your Password?') }}
+                                            </a>
+                                        @endif
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </li>
+                                        @endif
+                                    </div>
+                                    <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+                                </form>
+                            @endif
                         </div>
                         <!---->
                     </div>
