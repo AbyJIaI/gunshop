@@ -40,6 +40,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <i class="fas fa-phone"></i> Call</li>
                     <li class="number-phone mt-3">8 7272 098 9808</li>
+                    @if(Auth::user())
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit">LOGOUT</button>
+                        </form>
+                    @endif
                 </ul>
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
