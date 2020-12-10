@@ -29,13 +29,13 @@
 
 											<ul class="slides">
 												<li data-thumb="images/d2.jpg">
-													<div class="thumb-image"> <img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/d2.jpg" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+													<div class="thumb-image"> <img src="{{ asset('../assets/img/s1.jpg') }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
 												<li data-thumb="images/d1.jpg">
-													<div class="thumb-image"> <img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/d1.jpg" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+													<div class="thumb-image"> <img src="{{ asset('../assets/img/s1.jpg') }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
 												<li data-thumb="images/d3.jpg">
-													<div class="thumb-image"> <img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/d3.jpg" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+													<div class="thumb-image"> <img src="{{ asset('../assets/img/s1.jpg') }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
 											</ul>
 											<div class="clearfix"></div>
@@ -43,9 +43,9 @@
 									</div>
 								</div>
 								<div class="col-lg-8 single-right-left simpleCart_shelfItem">
-									<h3>Irayz Butterfly Sunglasses  (Black)</h3>
-									<p><span class="item_price">$650</span>
-										<del>$1,199</del>
+									<h3>Product name</h3>
+									<p><span class="item_price">$Sale price</span>
+										<del>$Product price </del>
 									</p>
 									<div class="rating1">
 										<ul class="stars">
@@ -65,25 +65,22 @@
 									</div>
 									<div class="color-quality">
 										<div class="color-quality-right">
-											<h5>Quality :</h5>
+											<h5>Caliber :</h5>
 											<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-													<option value="null">5 Qty</option>
-													<option value="null">6 Qty</option>
-													<option value="null">7 Qty</option>
-													<option value="null">10 Qty</option>
+													<option value="null">caliber type</option>
 												</select>
 										</div>
 									</div>
 									<div class="occasional">
 										<h5>Types :</h5>
 										<div class="colr ert">
-											<label class="radio"><input type="radio" name="radio" checked=""><i></i> Irayz Butterfly(Black)</label>
+											<label class="radio"><input type="radio" name="radio" checked=""><i></i> Type1</label>
 										</div>
 										<div class="colr">
-											<label class="radio"><input type="radio" name="radio"><i></i> Irayz Butterfly (Grey)</label>
+											<label class="radio"><input type="radio" name="radio"><i></i> Type2</label>
 										</div>
 										<div class="colr">
-											<label class="radio"><input type="radio" name="radio"><i></i> Irayz Butterfly (white)</label>
+											<label class="radio"><input type="radio" name="radio"><i></i> Type3</label>
 										</div>
 										<div class="clearfix"> </div>
 									</div>
@@ -451,7 +448,7 @@
 														<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s8.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+																<a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														<span class="product-new-top">New</span>
@@ -599,7 +596,7 @@
 														<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s10.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
-																<a href="single.blade.php" class="link-product-add-cart">Quick View</a>
+																<a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
 															</div>
 														</div>
 														<span class="product-new-top">New</span>
