@@ -14,7 +14,7 @@ class GendersController extends Controller
      */
     public function index()
     {
-        //
+        return 'genders';
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
+
+Route::resource('/genders', 'GendersController');
+Route::resource('/brand', 'BrandController');
+Route::resource('/calibertype', 'CaliberTypeController');
 
 Route::get('/about', function () {
     return view('about');
@@ -50,3 +55,5 @@ Route::get('/payment', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
+
+Route::get('/admin', 'AdminController@index')->name('admin');

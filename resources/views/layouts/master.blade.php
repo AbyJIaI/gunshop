@@ -54,6 +54,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <div class="col-md-3 top-info-cart text-right mt-lg-4">
                 <ul class="cart-inner-info">
+                    @auth
+                        @if(Auth::user()->role_id == 1)
+                            <li class="button">
+                                <a class="" href="{{ route('admin') }}">
+                                    <span class="fa fa-user-secret" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                        @endif
+                        <li class="button-log">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-dark btn-sm">
+                                <span class="fa fa-sign-out-alt" aria-hidden="true"></span></button>
+                        </form>
+                        </li>
+                    @endauth
+                    @guest
                     <li class="button-log">
                         <a class="btn-open" href="#">
                             <span class="fa fa-user" aria-hidden="true"></span>
@@ -69,6 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </button>
                         </form>
                     </li>
+                        @endguest
                 </ul>
                 <!---->
                 <div class="overlay-login text-left">
@@ -78,12 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="wrap">
                         <h5 class="text-center mb-4">Login Now</h5>
                         <div class="login p-5 bg-dark mx-auto mw-100">
-                            @if(Auth::user())
-                                <form action="{{ route('logout') }}" method="post">
-                                    @csrf
-                                    <button type="submit">LOGOUT</button>
-                                </form>
-                            @else
+{{--                            {{ dd(Auth::user()) }}--}}
                                 <form action="{{ route('login') }}" method="post">
                                     @csrf
                                     <div class="form-group">
@@ -124,7 +137,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                     <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
                                 </form>
-                            @endif
                         </div>
                         <!---->
                     </div>
@@ -164,15 +176,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
                         <a class="nav-link ml-lg-0" href="{{ route('home') }}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->is('about*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('about')}} ">About</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{ (request()->is('shop*')) ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             Features
@@ -225,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             Shop
@@ -317,7 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->is('contact*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                     </li>
                 </ul>

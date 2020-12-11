@@ -126,7 +126,6 @@
                                                     <i class="fas fa-cart-plus"></i>
                                                 </button>
 
-
                                             </form>
 
                                         </div>
