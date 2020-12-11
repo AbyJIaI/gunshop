@@ -50,3 +50,7 @@ Route::get('/payment', function () {
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');

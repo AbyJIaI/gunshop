@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/jquery-ui1.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/easy-responsive-tabs.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}" type="text/css" media="screen" />
     <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
@@ -79,9 +80,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h5 class="text-center mb-4">Login Now</h5>
                         <div class="login p-5 bg-dark mx-auto mw-100">
                             @if(Auth::user())
+                                <div class="form-group">
+                                    <a href="{{ route('profile') }}" class="googles-cart pgoogles-cart" style="color: #9fcdff; font-size: 20px">PROFILE</a>
+                                </div>
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
-                                    <button type="submit">LOGOUT</button>
+                                    <button type="submit" class="googles-cart pgoogles-cart" style="color: #9fcdff"> LOGOUT</button>
                                 </form>
                             @else
                                 <form action="{{ route('login') }}" method="post">
