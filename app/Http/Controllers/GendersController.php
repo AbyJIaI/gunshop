@@ -14,7 +14,8 @@ class GendersController extends Controller
      */
     public function index()
     {
-        return 'genders';
+        $genders = Genders::all();
+        return view('genders.index', compact('genders'));
     }
 
     /**
@@ -24,7 +25,8 @@ class GendersController extends Controller
      */
     public function create()
     {
-        //
+        $genders = Genders::all();
+        return view('genders.index', compact('genders'));
     }
 
     /**
@@ -35,7 +37,10 @@ class GendersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gender = new Genders();
+        $gender->name = $request->input('name');
+        $gender->save();
+        return redirect()->route('genders.index')->with('success', 'Gender is saved');
     }
 
     /**
@@ -46,7 +51,7 @@ class GendersController extends Controller
      */
     public function show(Genders $genders)
     {
-        //
+        return view('genders.index', compact('genders'));
     }
 
     /**
@@ -57,7 +62,7 @@ class GendersController extends Controller
      */
     public function edit(Genders $genders)
     {
-        //
+        return view('genders.edit', compact('genders'));
     }
 
     /**
@@ -69,7 +74,8 @@ class GendersController extends Controller
      */
     public function update(Request $request, Genders $genders)
     {
-        //
+        $genders->update($request->only('name'));
+        return redirect()->route('genders.index')->with('success', 'Gender has been updated');
     }
 
     /**
@@ -80,6 +86,7 @@ class GendersController extends Controller
      */
     public function destroy(Genders $genders)
     {
-        //
+        $genders->delete();
+        return redirect()->route('genders.index')->with('success', 'Gender has been deleted');
     }
 }

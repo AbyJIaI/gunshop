@@ -5,8 +5,6 @@
     <title>Gunshop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -74,20 +72,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('genders.index') }}">Genders</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('about*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('about')}} ">About</a>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('brand.index')}} ">Brands</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('contact*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('calibertype.index') }}">Caliber types</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('contact*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('category.index') }}">Categories</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('contact*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('contact*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                     </li>
                 </ul>
             </div>
@@ -99,8 +97,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     @yield('content')
 </div>
 <!--footer -->
-<footer class="py-lg-5 py-3">
-</footer>
+{{--<footer class="py-lg-5 py-3">
+</footer>--}}
 <!-- //footer -->
 
 <!--jQuery-->

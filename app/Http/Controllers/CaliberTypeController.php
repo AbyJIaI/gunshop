@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CaliberType;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\AbstractList;
 
 class CaliberTypeController extends Controller
 {
@@ -14,7 +15,8 @@ class CaliberTypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = CaliberType::all();
+        return view('caliber_types.index', compact('types'));
     }
 
     /**
@@ -24,7 +26,8 @@ class CaliberTypeController extends Controller
      */
     public function create()
     {
-        //
+        $types = CaliberType::all();
+        return view('caliber_types.index', compact('types'));
     }
 
     /**
@@ -35,7 +38,10 @@ class CaliberTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $type = new CaliberType();
+        $type->name = $request->input('name');
+        $type->save();
+        return redirect()->route('calibertype.index')->with('success', 'Caliber type is saved');
     }
 
     /**
@@ -46,7 +52,7 @@ class CaliberTypeController extends Controller
      */
     public function show(CaliberType $caliberType)
     {
-        //
+        return view('caliber_types.index', compact('caliberType'));
     }
 
     /**
@@ -57,7 +63,7 @@ class CaliberTypeController extends Controller
      */
     public function edit(CaliberType $caliberType)
     {
-        //
+        return view('caliber_types.edit', compact('caliberType'));
     }
 
     /**
@@ -69,7 +75,8 @@ class CaliberTypeController extends Controller
      */
     public function update(Request $request, CaliberType $caliberType)
     {
-        //
+        $caliberType->update($request->only('name'));
+        return redirect()->route('calibertype.index')->with('success', 'Caliber type has been updated');
     }
 
     /**
@@ -80,6 +87,7 @@ class CaliberTypeController extends Controller
      */
     public function destroy(CaliberType $caliberType)
     {
-        //
+        $caliberType->delete();
+        return redirect()->route('calibertype.index')->with('success', 'Caliber type has been deleted');
     }
 }

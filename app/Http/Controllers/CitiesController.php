@@ -14,7 +14,8 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        //
+        $cities = Cities::all();
+        return view('cities.index', compact('cities'));
     }
 
     /**
@@ -24,7 +25,8 @@ class CitiesController extends Controller
      */
     public function create()
     {
-        //
+        $cities = Cities::all();
+        return view('cities.index', compact('cities'));
     }
 
     /**
@@ -35,7 +37,10 @@ class CitiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $city = new Cities();
+        $city->name = $request->input('name');
+        $city->save();
+        return redirect()->route('cities.index')->with('success', 'City is added');
     }
 
     /**
@@ -46,7 +51,7 @@ class CitiesController extends Controller
      */
     public function show(Cities $cities)
     {
-        //
+        return view('cities.index', compact('cities'));
     }
 
     /**
@@ -57,7 +62,7 @@ class CitiesController extends Controller
      */
     public function edit(Cities $cities)
     {
-        //
+        return view('cities.edit', compact('cities'));
     }
 
     /**
@@ -69,7 +74,8 @@ class CitiesController extends Controller
      */
     public function update(Request $request, Cities $cities)
     {
-        //
+        $cities->update($request->only('name'));
+        return redirect()->route('cities.index')->with('success', 'City has been updated');
     }
 
     /**
@@ -80,6 +86,7 @@ class CitiesController extends Controller
      */
     public function destroy(Cities $cities)
     {
-        //
+        $cities->delete();
+        return redirect()->route('cities.index')->with('success', 'City has been deleted');
     }
 }
