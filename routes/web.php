@@ -57,3 +57,7 @@ Route::get('/checkout', function () {
 })->name('checkout');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');

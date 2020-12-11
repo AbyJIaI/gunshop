@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/jquery-ui1.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/easy-responsive-tabs.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}" type="text/css" media="screen" />
     <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
