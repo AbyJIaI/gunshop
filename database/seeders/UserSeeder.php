@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                     'surname' => 'Kassymzhanova',
                     'login' => 'aselek',
                     'email' => 'aselya@gmail.com',
-                    'password' => 'qwerty123',
+                    'password' => bcrypt('qwerty123'),
                     'role_id' => 1,
                     'gender_id' => 2
                 ],
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
                     'surname' => 'Amirov',
                     'login' => 'abyl',
                     'email' => 'abylay@gmail.com',
-                    'password' => 'qwerty1',
+                    'password' => bcrypt('qwerty1'),
                     'role_id' => '1',
                     'gender_id' => 1
                 ]

@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'login' => $this->faker->unique()->userName,
             'email' => $this->faker->unique()->safeEmail,
             'date_of_birth' => $this->faker->date(),
-            'password' => $this->faker->password,
+            'password' => bcrypt($this->faker->password),
             'gender_id' => Genders::all()->random(),
             'role_id' => Roles::all()->last(),
         ];
