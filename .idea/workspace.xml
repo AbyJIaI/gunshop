@@ -19,19 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Fix">
+    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Fixed relations, added edit blades">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GendersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GendersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/brands/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/caliber_types/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/caliber_types/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cities/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cities/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/genders/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/genders/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/genders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/genders/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +188,7 @@
       <workItem from="1607251221678" duration="2476000" />
       <workItem from="1607333623543" duration="19354000" />
       <workItem from="1607616038203" duration="9790000" />
-      <workItem from="1607694869941" duration="14948000" />
+      <workItem from="1607694869941" duration="15307000" />
     </task>
     <task id="LOCAL-00001" summary="about route">
       <created>1605591834773</created>
@@ -285,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607748863448</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed relations, added edit blades">
+      <created>1607754561060</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607754561060</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +310,9 @@
     <MESSAGE value="Admin panel" />
     <MESSAGE value="Added relations and validations" />
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Fixed relations" />
+    <MESSAGE value="Fixed relations, added edit blades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed relations, added edit blades" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607724638046">
@@ -371,14 +369,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="571" y="370" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1607751059726" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1607748865743">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1607754564624">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607748865743" />
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607753258955">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607754564624" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607754447235">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607753258955" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607754447235" />
     <state x="563" y="230" key="refactoring.ChangeSignatureDialog" timestamp="1607639817467">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

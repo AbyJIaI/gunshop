@@ -47,7 +47,7 @@
             <div class="col-md-3 top-info-cart text-right mt-lg-4">
                 <ul class="cart-inner-info">
                     @auth
-                        @if(Auth::user()->role_id == 1)
+                        @if(Auth::user()->role->id == 1)
                             <li class="button">
                                 <a class="" href="#">
                                     <span class="fa fa-user-secret" aria-hidden="true"></span>
