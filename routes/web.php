@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::resource('/genders', 'GendersController');
+Route::resource('/genders', 'GenderController');
 Route::resource('/brand', 'BrandController');
 Route::resource('/calibertype', 'CaliberTypeController');
 Route::resource('/category', 'CategoryController');
-Route::resource('/cities', 'CitiesController');
+Route::resource('/cities', 'CityController');
 Route::resource('/products', 'ProductController');
 
 Route::get('/about', function () {

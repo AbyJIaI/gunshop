@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cities;
+use App\Models\City;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
-class CitiesController extends Controller
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,7 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        $cities = Cities::all();
+        $cities = City::all();
         return view('cities.index', compact('cities'));
     }
 
@@ -32,7 +32,7 @@ class CitiesController extends Controller
      */
     public function create()
     {
-        $cities = Cities::all();
+        $cities = City::all();
         return view('cities.index', compact('cities'));
     }
 
@@ -48,59 +48,59 @@ class CitiesController extends Controller
         $this->validate($request,[
             'name' => 'required|min:2|unique:cities'
         ]);
-        Cities::create($request->all());
+        City::create($request->all());
         return redirect()->route('cities.index')->with('success', 'City is added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Cities $cities
+     * @param City $city
      * @return Application|Factory|View|Response
      */
-    public function show(Cities $cities)
+    public function show(City $city)
     {
-        return view('cities.index', compact('cities'));
+        return view('cities.index', compact('city'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Cities $cities
+     * @param City $city
      * @return Application|Factory|View|Response
      */
-    public function edit(Cities $cities)
+    public function edit(City $city)
     {
-        return view('cities.edit', compact('cities'));
+        return view('cities.edit', compact('city'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Cities $cities
+     * @param City $city
      * @return RedirectResponse
      * @throws ValidationException
      */
-    public function update(Request $request, Cities $cities)
+    public function update(Request $request, City $city)
     {
         $this->validate($request,[
             'name' => 'required|min:2|unique:cities'
         ]);
-        $cities->update($request->all());
+        $city->update($request->all());
         return redirect()->route('cities.index')->with('success', 'City has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param Cities $cities
+     * @param City $city
      * @return RedirectResponse
      * @throws Exception
      */
-    public function destroy(Cities $cities)
+    public function destroy(City $city)
     {
-        $cities->delete();
+        $city->delete();
         return redirect()->route('cities.index')->with('success', 'City has been deleted');
     }
 }

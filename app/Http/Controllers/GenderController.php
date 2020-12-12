@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genders;
+use App\Models\Gender;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -11,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class GendersController extends Controller
+class GenderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class GendersController extends Controller
      */
     public function index()
     {
-        $genders = Genders::all();
+        $genders = Gender::all();
         return view('genders.index', compact('genders'));
     }
     /**
@@ -44,58 +44,58 @@ class GendersController extends Controller
         $this->validate($request,[
             'name' => 'required|min:2|unique:genders'
         ]);
-        Genders::create($request->all());
+        Gender::create($request->all());
         return redirect()->route('genders.index')->with('success', 'Gender is saved');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Genders $genders
+     * @param Gender $gender
      * @return Application|Factory|View|Response
      */
-    public function show(Genders $genders)
+    public function show(Gender $gender)
     {
-        return view('genders.index', compact('genders'));
+        return view('genders.index', compact('gender'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Genders $genders
+     * @param Gender $gender
      * @return Application|Factory|View|Response
      */
-    public function edit(Genders $genders)
+    public function edit(Gender $gender)
     {
-        return view('genders.edit', compact('genders'));
+        return view('genders.edit', compact('gender'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Genders $genders
+     * @param Gender $gender
      * @return RedirectResponse
      */
-    public function update(Request $request, Genders $genders)
+    public function update(Request $request, Gender $gender)
     {
         $this->validate($request,[
             'name' => 'required|min:2|unique:genders'
         ]);
-        $genders->update($request->only('name'));
+        $gender->update($request->only('name'));
         return redirect()->route('genders.index')->with('success', 'Gender has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param Genders $genders
+     * @param Gender $gender
      * @return RedirectResponse
      * @throws Exception
      */
-    public function destroy(Genders $genders)
+    public function destroy(Gender $gender)
     {
-        $genders->delete();
+        $gender->delete();
         return redirect()->route('genders.index')->with('success', 'Gender has been deleted');
     }
 }

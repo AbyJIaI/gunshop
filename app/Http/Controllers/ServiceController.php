@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Roles;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class RolesController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class RolesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Roles $roles
+     * @param Service $service
      * @return Response
      */
-    public function show(Roles $roles)
+    public function show(Service $service)
     {
         //
     }
@@ -53,10 +53,10 @@ class RolesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Roles $roles
+     * @param Service $service
      * @return Response
      */
-    public function edit(Roles $roles)
+    public function edit(Service $service)
     {
         //
     }
@@ -65,10 +65,10 @@ class RolesController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Roles $roles
+     * @param Service $service
      * @return Response
      */
-    public function update(Request $request, Roles $roles)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -76,10 +76,10 @@ class RolesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Roles $roles
+     * @param Service $service
      * @return Response
      */
-    public function destroy(Roles $roles)
+    public function destroy(Service $service)
     {
         //
     }

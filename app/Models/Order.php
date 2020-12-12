@@ -10,11 +10,11 @@ class Order extends Model
     use HasFactory;
 
     public function city() {
-        return $this->belongsTo('App\Models\Cities');
+        return $this->belongsTo('App\Models\City');
     }
 
     public function service() {
-        return $this->belongsTo('App\Models\Services');
+        return $this->belongsTo('App\Models\Service');
     }
 
     public function paymentType() {

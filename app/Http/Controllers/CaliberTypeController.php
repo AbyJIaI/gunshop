@@ -12,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 use phpDocumentor\Reflection\Types\AbstractList;
 
 class CaliberTypeController extends Controller
@@ -48,7 +49,7 @@ class CaliberTypeController extends Controller
         $this->validate($request,[
             'name' => 'required|min:2|unique:categories'
         ]);
-        Category::create($request->all());
+        CaliberType::create($request->all());
         return redirect()->route('calibertype.index')->with('success', 'Caliber type is saved');
     }
 
@@ -80,6 +81,7 @@ class CaliberTypeController extends Controller
      * @param Request $request
      * @param CaliberType $caliberType
      * @return RedirectResponse
+     * @throws ValidationException
      */
     public function update(Request $request, CaliberType $caliberType)
     {

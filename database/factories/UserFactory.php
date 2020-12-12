@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Genders;
-use App\Models\Roles;
+use App\Models\Gender;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;
@@ -32,8 +32,8 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'date_of_birth' => $this->faker->date(),
             'password' => bcrypt($this->faker->password),
-            'gender_id' => Genders::all()->random(),
-            'role_id' => Roles::all()->last(),
+            'gender_id' => Gender::all()->random(),
+            'role_id' => Role::all()->last(),
         ];
     }
 }

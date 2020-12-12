@@ -13,6 +13,6 @@ class CitySeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Cities::factory(10)->create();
+        \App\Models\City::factory(10)->create();
     }
 }

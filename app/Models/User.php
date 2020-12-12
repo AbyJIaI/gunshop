@@ -20,11 +20,11 @@ class User extends Authenticatable
     }
 
     public function gender() {
-        return $this->belongsTo('App\Models\Genders');
+        return $this->belongsTo('App\Models\Gender');
     }
 
     public function role() {
-        return $this->belongsTo('App\Models\Roles');
+        return $this->belongsTo('App\Models\Role');
     }
 
     /**
