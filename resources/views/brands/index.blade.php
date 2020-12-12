@@ -36,8 +36,8 @@
                 <tr>
                     <td>{{$b->id}}</td>
                     <td>{{$b->name}}</td>
-                    <td class="row"><a href="{{route('brand.edit', $b->id)}}" class="btn btn-secondary">Edit</a>
-                        <form action="{{route('brand.destroy', $b->id)}}" method="post">
+                    <td class="row"><a href="{{route('brand.edit', $b)}}" class="btn btn-secondary">Edit</a>
+                        <form action="{{route('brand.destroy', $b)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-secondary ml-2" onclick="return confirm('Are you sure?')" type="submit">

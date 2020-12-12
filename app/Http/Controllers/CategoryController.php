@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -21,7 +27,7 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -32,23 +38,23 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
-        $category = new Category();
-        $category->name = $request->input('name');
-        $category->category_id = $request->input('category_id');
-        $category->save();
+        $this->validate($request,[
+            'name' => 'required|min:2|unique:category'
+        ]);
+        Category::create($request->all());
         return redirect()->route('category.index')->with('success', 'Category is added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @param Category $category
+     * @return Response
      */
     public function show(Category $category)
     {
@@ -58,8 +64,8 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @param Category $category
+     * @return Application|Factory|View|Response
      */
     public function edit(Category $category)
     {
@@ -69,12 +75,15 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Category $category
+     * @return RedirectResponse
      */
     public function update(Request $request, Category $category)
     {
+        $this->validate($request,[
+            'name' => 'required|min:2|unique:category'
+        ]);
         $category->update($request->only('name', 'category_id'));
         return redirect()->route('category.index')->with('success', 'Category has been updated');
     }
@@ -82,8 +91,8 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @param Category $category
+     * @return RedirectResponse
      */
     public function destroy(Category $category)
     {

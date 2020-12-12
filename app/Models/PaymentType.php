@@ -9,6 +9,10 @@ class PaymentType extends Model
 {
     use HasFactory;
 
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
+
     protected $fillable = ['name'];
 
     public $timestamps = false;

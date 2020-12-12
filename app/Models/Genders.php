@@ -9,6 +9,10 @@ class Genders extends Model
 {
     use HasFactory;
 
+    public function users() {
+        return $this->hasMany('App\User');
+    }
+
     protected $fillable = ['name'];
 
     public $timestamps = false;

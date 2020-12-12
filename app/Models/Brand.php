@@ -9,6 +9,10 @@ class Brand extends Model
 {
     use HasFactory;
 
+    public function products() {
+        return $this->hasMany('App\Product');
+    }
+
     protected $fillable = ['name'];
 
     public $timestamps = false;

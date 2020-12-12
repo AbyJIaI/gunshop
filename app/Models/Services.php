@@ -9,6 +9,10 @@ class Services extends Model
 {
     use HasFactory;
 
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
+
     protected $fillable = ['name', 'price'];
 
     public $timestamps = false;

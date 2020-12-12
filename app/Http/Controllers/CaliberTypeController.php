@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\CaliberType;
+use App\Models\Category;
+use Exception;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\AbstractList;
 
 class CaliberTypeController extends Controller
@@ -11,7 +19,7 @@ class CaliberTypeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function index()
     {
@@ -22,33 +30,33 @@ class CaliberTypeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function create()
     {
-        $types = CaliberType::all();
         return view('caliber_types.index', compact('types'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
-        $type = new CaliberType();
-        $type->name = $request->input('name');
-        $type->save();
+        $this->validate($request,[
+            'name' => 'required|min:2|unique:categories'
+        ]);
+        Category::create($request->all());
         return redirect()->route('calibertype.index')->with('success', 'Caliber type is saved');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CaliberType  $caliberType
-     * @return \Illuminate\Http\Response
+     * @param CaliberType $caliberType
+     * @return Application|Factory|View|Response
      */
     public function show(CaliberType $caliberType)
     {
@@ -58,8 +66,8 @@ class CaliberTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CaliberType  $caliberType
-     * @return \Illuminate\Http\Response
+     * @param CaliberType $caliberType
+     * @return Application|Factory|View|Response
      */
     public function edit(CaliberType $caliberType)
     {
@@ -69,21 +77,25 @@ class CaliberTypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CaliberType  $caliberType
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param CaliberType $caliberType
+     * @return RedirectResponse
      */
     public function update(Request $request, CaliberType $caliberType)
     {
-        $caliberType->update($request->only('name'));
+        $this->validate($request,[
+            'name' => 'required|min:2|unique:categories'
+        ]);
+        $caliberType->update($request->all());
         return redirect()->route('calibertype.index')->with('success', 'Caliber type has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CaliberType  $caliberType
-     * @return \Illuminate\Http\Response
+     * @param CaliberType $caliberType
+     * @return RedirectResponse
+     * @throws Exception
      */
     public function destroy(CaliberType $caliberType)
     {

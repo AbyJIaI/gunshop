@@ -11,6 +11,22 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
+
+    public function baskets() {
+        return $this->hasMany('App\Basket');
+    }
+
+    public function gender() {
+        return $this->belongsTo('App\Genders');
+    }
+
+    public function role() {
+        return $this->belongsTo('App\Roles');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

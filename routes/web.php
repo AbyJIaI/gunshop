@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::resource('/genders', 'GendersController');
+Route::resource('/gender', 'GendersController');
 Route::resource('/brand', 'BrandController');
 Route::resource('/calibertype', 'CaliberTypeController');
 Route::resource('/category', 'CategoryController');

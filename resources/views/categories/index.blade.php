@@ -42,6 +42,7 @@
             <tr>
                 <td scope="col">#</td>
                 <td scope="col">Category name</td>
+                <td scope="col">Parent category id</td>
                 <td scope="col">Functions</td>
             </tr>
             </thead>
@@ -50,8 +51,9 @@
                 <tr>
                     <td>{{$g->id}}</td>
                     <td>{{$g->name}}</td>
-                    <td class="row"><a href="{{route('category.edit', $g->id)}}" class="btn btn-secondary">Edit</a>
-                        <form action="{{route('category.destroy', $g->id)}}" method="post">
+                    <td>{{$g->category_id != null ? $g->category_id : "Nothing"}}</td>
+                    <td class="row"><a href="{{route('category.edit', $g)}}" class="btn btn-secondary">Edit</a>
+                        <form action="{{route('category.destroy', $g)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-secondary ml-2" onclick="return confirm('Are you sure?')" type="submit">

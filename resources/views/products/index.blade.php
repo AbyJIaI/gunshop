@@ -108,8 +108,8 @@
                 <tr>
                     <td>{{$g->id}}</td>
                     <td>{{$g->name}}</td>
-                    <td class="row"><a href="{{route('products.edit', $g->id)}}" class="btn btn-secondary">Edit</a>
-                        <form action="{{route('products.destroy', $g->id)}}" method="post">
+                    <td class="row"><a href="{{route('products.edit', $g)}}" class="btn btn-secondary">Edit</a>
+                        <form action="{{route('products.destroy', $g)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-secondary ml-2" onclick="return confirm('Are you sure?')" type="submit">
