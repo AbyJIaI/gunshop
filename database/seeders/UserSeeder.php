@@ -23,7 +23,8 @@ class UserSeeder extends Seeder
                     'login' => 'aselek',
                     'email' => 'aselya@gmail.com',
                     'password' => 'qwerty123',
-                    'role_id' => 1
+                    'role_id' => 1,
+                    'gender_id' => 2
                 ],
                 [
                     'id' => 2,
@@ -32,7 +33,8 @@ class UserSeeder extends Seeder
                     'login' => 'abyl',
                     'email' => 'abylay@gmail.com',
                     'password' => 'qwerty1',
-                    'role_id' => '1'
+                    'role_id' => '1',
+                    'gender_id' => 1
                 ]
             ];
             foreach ($users as $user){

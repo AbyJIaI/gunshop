@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'date_of_birth' => $this->faker->date(),
             'password' => $this->faker->password,
             'gender_id' => Genders::all()->random(),
-            'role_id' => Roles::all()->first(),
+            'role_id' => Roles::all()->last(),
         ];
     }
 }
