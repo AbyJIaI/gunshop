@@ -11,7 +11,7 @@ class Cities extends Model
     use HasFactory;
 
     public function orders() {
-        return $this->hasMany('App\Order');
+        return $this->hasMany('App\Models\Order');
     }
 
     protected $fillable = ['name'];

@@ -10,19 +10,19 @@ class Product extends Model
     use HasFactory;
 
     public function category() {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 
     public function brand() {
-        return $this->belongsTo('App\Brand');
+        return $this->belongsTo('App\Models\Brand');
     }
 
     public function caliberType() {
-        return $this->belongsTo('App\CaliberType');
+        return $this->belongsTo('App\Models\CaliberType');
     }
 
     public function baskets() {
-        return $this->hasMany('App\Basket');
+        return $this->hasMany('App\Models\Basket');
     }
 
     protected $fillable = ['name', 'category_id', 'brand_id', 'caliber_id', 'price', 'amount'];

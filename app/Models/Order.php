@@ -10,23 +10,23 @@ class Order extends Model
     use HasFactory;
 
     public function city() {
-        return $this->belongsTo('App\Cities');
+        return $this->belongsTo('App\Models\Cities');
     }
 
     public function service() {
-        return $this->belongsTo('App\Services');
+        return $this->belongsTo('App\Models\Services');
     }
 
     public function paymentType() {
-        return $this->belongsTo('App\PaymentType');
+        return $this->belongsTo('App\Models\PaymentType');
     }
 
     public function product() {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('App\Models\Product');
     }
 
     public function users() {
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\Models\User');
     }
 
     protected $fillable = ['amount', 'address', 'user_id', 'product_id', 'payment_type_id', 'city_id', 'service_id'];

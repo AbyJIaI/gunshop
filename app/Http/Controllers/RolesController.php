@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Roles;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -20,7 +21,7 @@ class RolesController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -30,8 +31,8 @@ class RolesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -41,8 +42,8 @@ class RolesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
+     * @param Roles $roles
+     * @return Response
      */
     public function show(Roles $roles)
     {
@@ -52,8 +53,8 @@ class RolesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
+     * @param Roles $roles
+     * @return Response
      */
     public function edit(Roles $roles)
     {
@@ -63,9 +64,9 @@ class RolesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Roles $roles
+     * @return Response
      */
     public function update(Request $request, Roles $roles)
     {
@@ -75,8 +76,8 @@ class RolesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
+     * @param Roles $roles
+     * @return Response
      */
     public function destroy(Roles $roles)
     {

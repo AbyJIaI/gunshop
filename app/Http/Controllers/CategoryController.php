@@ -16,7 +16,7 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function create()
     {
@@ -39,12 +39,12 @@ class CategoryController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required|min:2|unique:category'
+            'name' => 'required|min:2|unique:categories'
         ]);
         Category::create($request->all());
         return redirect()->route('category.index')->with('success', 'Category is added');
@@ -82,7 +82,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $this->validate($request,[
-            'name' => 'required|min:2|unique:category'
+            'name' => 'required|min:2|unique:categories'
         ]);
         $category->update($request->only('name', 'category_id'));
         return redirect()->route('category.index')->with('success', 'Category has been updated');

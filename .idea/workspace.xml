@@ -19,35 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Admin panel">
+    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Fix">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CaliberTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CaliberTypeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CitiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CitiesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GendersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GendersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Basket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Basket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Brand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CaliberType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CaliberType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Cities.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cities.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Genders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Genders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PaymentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PaymentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Roles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Roles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Services.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/brands/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/brands/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/caliber_types/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/caliber_types/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cities/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cities/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/brands/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/caliber_types/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/caliber_types/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cities/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cities/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/genders/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/genders/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/genders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/genders/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +199,7 @@
       <workItem from="1607251221678" duration="2476000" />
       <workItem from="1607333623543" duration="19354000" />
       <workItem from="1607616038203" duration="9790000" />
-      <workItem from="1607694869941" duration="10183000" />
+      <workItem from="1607694869941" duration="14948000" />
     </task>
     <task id="LOCAL-00001" summary="about route">
       <created>1605591834773</created>
@@ -286,7 +271,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607694935731</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added relations and validations">
+      <created>1607748814207</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607748814207</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fix">
+      <created>1607748863448</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607748863448</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +312,9 @@
     <MESSAGE value="Added migrations, models, controllers to database" />
     <MESSAGE value="Migrations fixed(removed timestamps) and from Modules. Additional fixes." />
     <MESSAGE value="Admin panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin panel" />
+    <MESSAGE value="Added relations and validations" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607724638046">
@@ -324,11 +325,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="474" y="369" key="ComposerInitDialogKey/0.0.1440.900@0.0.1440.900" timestamp="1607334562385" />
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1607719076952">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1607752305884">
+      <screen x="0" y="23" width="1440" height="831" />
     </state>
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607718783874" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607752195854" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.830@0.23.1440.830" timestamp="1607628079950" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.831@0.23.1440.831" timestamp="1607752305884" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.832@0.23.1440.832" timestamp="1607719076952" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.834@0.23.1440.834" timestamp="1607365930301" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.835@0.23.1440.835" timestamp="1607394662547" />
@@ -356,22 +358,27 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607365225073" />
-    <state x="144" y="79" key="MergeDialog" timestamp="1607695030058">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="144" y="96" key="MergeDialog" timestamp="1607750986187">
+      <screen x="0" y="23" width="1440" height="831" />
     </state>
     <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607695030058" />
+    <state x="144" y="96" key="MergeDialog/0.23.1440.831@0.23.1440.831" timestamp="1607750986187" />
     <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1607695030091">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607695030091" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1607695037581">
+    <state x="571" y="370" key="VCS.ChangelistChooser" timestamp="1607751059726">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607695037581" />
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607747047648">
+    <state x="571" y="370" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1607751059726" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1607748865743">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607747047648" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607748865743" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607753258955">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607753258955" />
     <state x="563" y="230" key="refactoring.ChangeSignatureDialog" timestamp="1607639817467">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

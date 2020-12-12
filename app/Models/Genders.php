@@ -10,7 +10,7 @@ class Genders extends Model
     use HasFactory;
 
     public function users() {
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\Models\User');
     }
 
     protected $fillable = ['name'];

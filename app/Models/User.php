@@ -12,19 +12,19 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     public function orders() {
-        return $this->hasMany('App\Order');
+        return $this->hasMany('App\Models\Order');
     }
 
     public function baskets() {
-        return $this->hasMany('App\Basket');
+        return $this->hasMany('App\Models\Basket');
     }
 
     public function gender() {
-        return $this->belongsTo('App\Genders');
+        return $this->belongsTo('App\Models\Genders');
     }
 
     public function role() {
-        return $this->belongsTo('App\Roles');
+        return $this->belongsTo('App\Models\Roles');
     }
 
     /**
