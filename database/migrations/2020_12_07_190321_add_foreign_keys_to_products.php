@@ -14,11 +14,11 @@ class AddForeignKeysToProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->unsigned();
+            $table->unsignedBigInteger('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->unsignedBigInteger('brand_id')->unsigned();
+            $table->unsignedBigInteger('brand_id')->unsigned()->nullable();
             $table->foreign('brand_id')->references('id')->on('brands')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->unsignedBigInteger('caliber_id')->unsigned();
+            $table->unsignedBigInteger('caliber_id')->unsigned()->nullable();
             $table->foreign('caliber_id')->references('id')->on('caliber_types')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }

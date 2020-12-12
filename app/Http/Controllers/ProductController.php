@@ -49,15 +49,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product();
-        $product->name = $request->input('name');
-        $product->price = $request->input('price');
-        $product->amount = $request->input('amount');
-        $product->category_id = $request->input('category_id');
-        $product->brand_id = $request->input('brand_id');
-        $product->caliber_id = $request->input('caliber_id');
-        $product->save();
-        return redirect()->route('product.index')->with('success', 'Product is added');
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        Product::create($request->all());
+        return redirect()->route('products.index')->with('success', 'Product is added');
     }
 
     /**

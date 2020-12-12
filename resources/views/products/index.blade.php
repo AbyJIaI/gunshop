@@ -12,7 +12,7 @@
 
         <h4 class="mt-4 offset-5">PRODUCTS</h4>
         <div class="mt-4 offset-3">
-            <form method="post" action="{{route('products.store')}}">
+            <form method="post" action="{{route('products.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label for="control-label" class="col-sm-2 col-form-label">Product name</label>
@@ -90,6 +90,15 @@
                             <option value="">Select</option>
                             <option value="">243 rem</option>
                         </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="control-label" class="col-sm-2 col-form-label" >Select a file:
+                        <i class="fa fa-download"></i>
+                    </label>
+                    <div class="col-sm-4">
+                        <input id="image" type="file" name="image" accept="image/*" onchange="readURL(this);">
+                        <span class="text-danger">{{ $errors->first('image') }}</span>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-secondary" style="margin-left: 150px">ADD PRODUCT</button>
