@@ -6,6 +6,7 @@ use App\Models\Genders;
 use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
@@ -32,7 +33,7 @@ class UserFactory extends Factory
             'date_of_birth' => $this->faker->date(),
             'password' => $this->faker->password,
             'gender_id' => Genders::all()->random(),
-            'role_id' => 2
+            'role_id' => Roles::all()->first(),
         ];
     }
 }
