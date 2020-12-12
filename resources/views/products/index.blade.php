@@ -68,13 +68,12 @@
                     <label for="control-label" class="col-sm-2 col-form-label" >Brand:</label>
                     <div class="col-sm-4">
                         <select class="form-control" name="brand_id">
-                            {{-- @if($brands!=null){
+                            <option value="">Select</option>
+                            @if($brands!=null){
                             @foreach ($brands as $brand) {
                             <option value="{{$brand->id}}">{{ $brand->name }}</option>
                             @endforeach
-                            @endif --}}
-                            <option value="">Select</option>
-                            <option value="">Sako</option>
+                            @endif
                         </select>
                     </div>
                 </div>
@@ -117,7 +116,9 @@
                 <tr>
                     <td>{{$g->id}}</td>
                     <td>{{$g->name}}</td>
-                    <td class="row"><a href="{{route('products.edit', $g)}}" class="btn btn-secondary">Edit</a>
+                    <td class="row">
+                        <a href="{{route('products.edit', $g)}}" class="btn btn-secondary">Edit</a>
+                        <a href="{{route('products.show', $g)}}" class="btn btn-secondary ml-2">Show</a>
                         <form action="{{route('products.destroy', $g)}}" method="post">
                             @method('DELETE')
                             @csrf

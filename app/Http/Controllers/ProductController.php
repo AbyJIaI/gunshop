@@ -7,6 +7,7 @@ use App\Models\CaliberType;
 use App\Models\Category;
 use App\Models\Product;
 use Exception;
+use Intervention\Image\Facades\Image;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -23,8 +24,11 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $types = CaliberType::all();
+        $brands = Brand::all();
+        $categories = Category::all();
         $products = Product::all();
-        return view('products.index', compact('products'));
+        return view('products.index', compact('types', 'brands', 'categories', 'products'));
     }
 
     /**
@@ -34,11 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $types = CaliberType::all();
-        $brands = Brand::all();
-        $categories = Category::all();
-        $products = Product::all();
-        return view('products.index', compact('types', 'brands', 'categories', 'products'));
+
     }
 
     /**
@@ -50,12 +50,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = time().'.'.$request->image->extension();
+        if ($request->input('image')){
+            $imageName = time().'.'.$request->image->extension();
 
-        $request->image->move(public_path('images'), $imageName);
+            $request->image->move(public_path('images'), $imageName);
+        }
 
         Product::create($request->all());
         return redirect()->route('products.index')->with('success', 'Product is added');
@@ -69,7 +71,14 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.index', compact('product'));
+
+//        $image_file = Image::make($product->image);
+//
+//        $response = Response::make($image_file->encode(['jpeg', 'jpg']));
+//
+//        $response->header('Content-Type', 'image/jpeg');
+//
+        return view('products.details', compact('product'));
     }
 
     /**
