@@ -90,6 +90,30 @@
                 </ul>
             </div>
         </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-mega mx-auto">
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('genders.index') }}">Genders</a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('brand.index')}} ">Brands</a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('calibertype.index') }}">Caliber types</a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('category.index') }}">Categories</a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('products.index') }}">Products</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <!-- //header -->
 </div>
