@@ -53,13 +53,16 @@ class ProductController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if ($request->input('image')){
-            $imageName = time().'.'.$request->image->extension();
-
-            $request->image->move(public_path('images'), $imageName);
+        $params = $request->all();
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $path = '/app/public/' . $filename;
+            Image::make($image->getRealPath())->resize(300, 300)->save(storage_path($path));
+            $params['image'] = $path;
         }
 
-        Product::create($request->all());
+        Product::create($params);
         return redirect()->route('products.index')->with('success', 'Product is added');
     }
 
