@@ -22,6 +22,9 @@ Route::resource('/calibertype', 'CaliberTypeController');
 Route::resource('/category', 'CategoryController');
 Route::resource('/cities', 'CityController');
 Route::resource('/products', 'ProductController');
+Route::resource('/roles', 'RoleController');
+Route::resource('/services', 'ServiceController');
+Route::resource('/posts', 'PostController');
 Route::resource('/', 'HomeController');
 
 

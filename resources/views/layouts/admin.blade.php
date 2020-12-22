@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
                 <h1 class="logo-w3layouts">
-                    <a class="navbar-brand" href="{{ route('index') }}">Admin Panel</a>
+                    <a class="navbar-brand" href="{{ route('admin') }}">Admin Panel</a>
                 </h1>
             </div>
 
@@ -69,23 +69,20 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                    <li class="nav-item {{ (request()->is('/genders')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('genders.index') }}">Genders</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                    <li class="nav-item {{ (request()->is('/brand')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('brand.index')}} ">Brands</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                    <li class="nav-item {{ (request()->is('/calibertype')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('calibertype.index') }}">Caliber types</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                    <li class="nav-item {{ (request()->is('/category')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('category.index') }}">Categories</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                    <li class="nav-item {{ (request()->is('/cities')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                     </li>
                 </ul>
             </div>
@@ -94,21 +91,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
                     <li class="nav-item {{ (request()->is('/roles*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('brand.index') }}">Roles</a>
+                        <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('brand.index')}} ">Brands</a>
+                    <li class="nav-item {{ (request()->is('/services')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('services.index')}} ">Services</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('calibertype.index') }}">Caliber types</a>
+                    <li class="nav-item {{ (request()->is('/post')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('category.index') }}">Categories</a>
+                    <li class="nav-item {{ (request()->is('/paymenttypes')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('category.index') }}">Payment types</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
+                    <li class="nav-item {{ (request()->is('/products')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                     </li>
                 </ul>

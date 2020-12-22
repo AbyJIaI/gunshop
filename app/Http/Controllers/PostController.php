@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CaliberType;
-use App\Models\Category;
+use App\Models\Post;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -13,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
-class CaliberTypeController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,8 +21,8 @@ class CaliberTypeController extends Controller
      */
     public function index()
     {
-        $types = CaliberType::all();
-        return view('caliber_types.index', compact('types'));
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -33,7 +32,8 @@ class CaliberTypeController extends Controller
      */
     public function create()
     {
-        return view('caliber_types.index', compact('types'));
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -45,62 +45,64 @@ class CaliberTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name' => 'required|min:2|unique:categories'
+        $this->validate($request, [
+            'title' => 'required|min:1|max:255',
+            'description' => 'required|min:1|max:1000'
         ]);
-        CaliberType::create($request->all());
-        return redirect()->route('calibertype.index')->with('success', 'Caliber type is saved');
+        Post::create($request->all());
+        return redirect()->route('posts.index')->with('success', 'Post is added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param CaliberType $caliberType
+     * @param Post $post
      * @return Application|Factory|View|Response
      */
-    public function show(CaliberType $caliberType)
+    public function show(Post $post)
     {
-        return view('caliber_types.index', compact('caliberType'));
+        return view('posts.index', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param CaliberType $caliberType
+     * @param Post $post
      * @return Application|Factory|View|Response
      */
-    public function edit(CaliberType $caliberType)
+    public function edit(Post $post)
     {
-        return view('caliber_types.edit', compact('caliberType'));
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param CaliberType $caliberType
+     * @param Post $post
      * @return RedirectResponse
      * @throws ValidationException
      */
-    public function update(Request $request, CaliberType $caliberType)
+    public function update(Request $request, Post $post)
     {
-        $this->validate($request,[
-            'name' => 'required|min:2|unique:categories'
+        $this->validate($request, [
+            'title' => 'required|min:1|max:255',
+            'description' => 'required|min:1|max:1000'
         ]);
-        $caliberType->update($request->all());
-        return redirect()->route('calibertype.index')->with('success', 'Caliber type has been updated');
+        $post->update($request->all());
+        return redirect()->route('posts.index')->with('success', 'Post has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param CaliberType $caliberType
+     * @param Post $post
      * @return RedirectResponse
      * @throws Exception
      */
-    public function destroy(CaliberType $caliberType)
+    public function destroy(Post $post)
     {
-        $caliberType->delete();
-        return redirect()->route('calibertype.index')->with('success', 'Caliber type has been deleted');
+        $post->delete();
+        return redirect()->route('posts.index')->with('success', 'Post has been deleted');
     }
 }

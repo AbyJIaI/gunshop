@@ -10,50 +10,42 @@
             </div>
         @endif
 
-        <h4 class="mt-4 offset-5">CATEGORIES</h4>
+        <h4 class="mt-4 offset-5">GENDERS</h4>
         <div class="mt-4 offset-3">
-            <form method="post" action="{{route('category.store')}}">
+            <form method="post" action="{{route('services.store')}}">
                 @csrf
                 <div class="form-group row">
-                    <label for="control-label" class="col-sm-2 col-form-label">Category name</label>
+                    <label for="control-label" class="col-sm-2 col-form-label">Service name</label>
                     <div class="col-sm-4">
                         <input type="text" name="name" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="control-label" class="col-sm-2 col-form-label" >Base category:</label>
+                    <label for="control-label" class="col-sm-2 col-form-label">Price</label>
                     <div class="col-sm-4">
-                        <select class="form-control" name="category_id">
-                            <option value="0">Select</option>
-                            @isset($categories){
-                                @foreach ($categories as $category) {
-                                    <option value="{{$category->id}}" {{ old('category_id') ? old('category_id') == $category->id ? 'selected' : '' : '' }} >
-                                        {{ $category->name }}</option>
-                                @endforeach
-                            @endisset
-                        </select>
+                        <input type="text" name="price" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-secondary" style="margin-left: 150px">ADD CATEGORY</button>
+                <button type="submit" class="btn btn-secondary" style="margin-left: 150px">ADD SERVICE</button>
             </form>
         </div>
         <table class="table mt-4">
             <thead>
             <tr>
                 <td scope="col">#</td>
-                <td scope="col">Category name</td>
-                <td scope="col">Parent category id</td>
+                <td scope="col">Service name</td>
+                <td scope="col">Price</td>
                 <td scope="col">Functions</td>
             </tr>
             </thead>
             <tbody>
-            @foreach($categories as $g)
+            @foreach($services as $service)
                 <tr>
-                    <td>{{$g->id}}</td>
-                    <td>{{$g->name}}</td>
-                    <td>{{$g->category_id != null ? $g->category_id : "Nothing"}}</td>
-                    <td class="row"><a href="{{route('category.edit', $g)}}" class="btn btn-secondary">Edit</a>
-                        <form action="{{route('category.destroy', $g)}}" method="post">
+                    <td>{{$service->id}}</td>
+                    <td>{{$service->name}}</td>
+                    <td>{{$service->price}}</td>
+                    <td class="row"><a href="{{route('services.edit', $service)}}" class="btn btn-secondary">Edit</a>
+                        <form action="{{route('services.destroy', $service)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-secondary ml-2" onclick="return confirm('Are you sure?')" type="submit">

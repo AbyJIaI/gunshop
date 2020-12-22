@@ -103,7 +103,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update($request->only('name', 'price', 'amount', 'brand_id', 'category_id', 'caliber_id'));
-        return redirect()->route('product.index')->with('success', 'Caliber has been updated');
+        return redirect()->route('products.index')->with('success', 'Caliber has been updated');
     }
 
     /**
@@ -116,6 +116,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('product.index')->with('success', 'Product has been deleted');
+        return redirect()->route('products.index')->with('success', 'Product has been deleted');
     }
 }

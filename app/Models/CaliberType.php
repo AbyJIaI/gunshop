@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CaliberType extends Model
 {
+    protected $table = "caliber_types";
+
     use HasFactory;
 
     public function products() {
