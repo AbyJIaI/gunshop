@@ -65,6 +65,7 @@
                 <h3 class="tittle-w3layouts my-lg-4 my-4">New Arrivals for you </h3>
                 <div class="row">
                     <!-- /womens -->
+
                     @if(isset($products))
                     @foreach($products as $product)
                         <div class="col-md-3 product-men women_two mt-3">

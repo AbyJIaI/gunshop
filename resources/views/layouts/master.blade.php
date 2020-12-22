@@ -406,6 +406,7 @@
                 <div class="footer-title">
                     <h3>Quick Links</h3>
                 </div>
+
                 <ul class="links">
                     <li>
                         <a href="{{ route('index') }}">Home</a>

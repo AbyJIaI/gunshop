@@ -63,6 +63,7 @@ class ProductController extends Controller
             $path = '/app/public/' . $filename;
             Image::make($image->getRealPath())->resize(300, 300)->save(storage_path($path));
             $params['image'] = $filename;
+
         }
 
         Product::create($params);

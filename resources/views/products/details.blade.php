@@ -6,4 +6,5 @@
     <h2>Amount: {{ $product->amount }}</h2>
     <img src="{{ asset('storage/'.$product->image) }}" alt="product image">
 </div>
+
 @endsection

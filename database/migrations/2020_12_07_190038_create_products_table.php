@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->double('price')->default(0);
             $table->integer('amount')->default(0);
             $table->string('image')->nullable()->default('product_image.png');
+
         });
     }
 

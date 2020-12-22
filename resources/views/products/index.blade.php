@@ -10,6 +10,7 @@
             </div>
         @endif
 
+
         <h4 class="mt-4 offset-5">PRODUCTS</h4>
         <div class="mt-4 offset-3">
             <form method="post" action="{{route('products.store')}}" enctype="multipart/form-data">

@@ -27,5 +27,6 @@ class Product extends Model
 
     protected $fillable = ['name', 'category_id', 'brand_id', 'caliber_id', 'price', 'amount', 'image'];
 
+
     public $timestamps = false;
 }
