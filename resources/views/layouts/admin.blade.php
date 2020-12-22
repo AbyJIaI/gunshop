@@ -49,8 +49,8 @@
                     @auth
                         @if(Auth::user()->role->id == 1)
                             <li class="button">
-                                <a class="" href="#">
-                                    <span class="fa fa-user-secret" aria-hidden="true"></span>
+                                <a class="" href="{{ route('index') }}">
+                                    <span class="fa fa-home" aria-hidden="true"></span>
                                 </a>
                             </li>
                         @endif
