@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        <h4 class="mt-4 offset-5">GENDERS</h4>
+        <h4 class="mt-4 offset-5">SERVICES</h4>
         <div class="mt-4 offset-3">
             <form method="post" action="{{route('services.store')}}">
                 @csrf
