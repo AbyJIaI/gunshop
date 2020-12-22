@@ -67,9 +67,9 @@
                         <select class="form-control" name="brand_id">
                             <option value="">Select</option>
                             @if($brands!=null){
-                            @foreach ($brands as $brand) {
-                            <option value="{{$brand->id}}">{{ $brand->name }}</option>
-                            @endforeach
+                                @foreach ($brands as $brand) {
+                                    <option value="{{$brand->id}}">{{ $brand->name }}</option>
+                                @endforeach
                             @endif
                         </select>
                     </div>
