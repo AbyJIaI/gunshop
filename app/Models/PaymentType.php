@@ -9,6 +9,8 @@ class PaymentType extends Model
 {
     use HasFactory;
 
+    protected $table = "payment_types";
+
     public function orders() {
         return $this->hasMany('App\Models\Order');
     }
