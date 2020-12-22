@@ -94,7 +94,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
                     <li class="nav-item {{ (request()->is('/roles*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
+                        <a class="nav-link" href="{{ route('brand.index') }}">Roles</a>
                     </li>
                     <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('brand.index')}} ">Brands</a>

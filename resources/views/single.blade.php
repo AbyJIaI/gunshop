@@ -8,7 +8,7 @@
 
 					<ul class="short">
 						<li>
-							<a href="{{ route('home') }}">Home</a>
+							<a href="{{ route('index') }}">Home</a>
 							<i>|</i>
 						</li>
 						<li>Single Page</li>
@@ -28,14 +28,8 @@
 										<div class="flexslider1">
 
 											<ul class="slides">
-												<li data-thumb="images/d2.jpg">
-													<div class="thumb-image"> <img src="{{ asset('../assets/img/s1.jpg') }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
-												</li>
-												<li data-thumb="images/d1.jpg">
-													<div class="thumb-image"> <img src="{{ asset('../assets/img/s1.jpg') }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
-												</li>
-												<li data-thumb="images/d3.jpg">
-													<div class="thumb-image"> <img src="{{ asset('../assets/img/s1.jpg') }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+												<li data-thumb="{{ asset('storage/'.$product->image) }}">
+													<div class="thumb-image"> <img src="{{ asset('storage/'.$product->image) }}" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
 											</ul>
 											<div class="clearfix"></div>
@@ -43,9 +37,9 @@
 									</div>
 								</div>
 								<div class="col-lg-8 single-right-left simpleCart_shelfItem">
-									<h3>Product name</h3>
-									<p><span class="item_price">$Sale price</span>
-										<del>$Product price </del>
+									<h3>{{ $product->name }}</h3>
+									<p><span class="item_price">${{ $product->price }}</span>
+										<del>$Old price </del>
 									</p>
 									<div class="rating1">
 										<ul class="stars">

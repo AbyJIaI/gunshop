@@ -5,10 +5,9 @@
 		<div class="banner_inner">
 			<div class="services-breadcrumb">
 				<div class="inner_breadcrumb">
-
 					<ul class="short">
 						<li>
-							<a href="{{ route('home') }}">Home</a>
+							<a href="{{ route('index') }}">Home</a>
 							<i>|</i>
 						</li>
 						<li>Contact Us</li>

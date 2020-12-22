@@ -75,7 +75,7 @@
                                         <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid" alt="product image">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="{{ route('single') }}" class="link-product-add-cart">Quick View</a>
+                                                <a href="{{ route('products.show', $product) }}" class="link-product-add-cart">Quick View</a>
                                             </div>
                                         </div>
                                         <span class="product-new-top">New</span>

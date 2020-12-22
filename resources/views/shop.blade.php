@@ -7,7 +7,7 @@
 
 					<ul class="short">
 						<li>
-							<a href="{{ route('home') }}">Home</a>
+							<a href="{{ route('index') }}">Home</a>
 							<i>|</i>
 						</li>
 						<li>Shop</li>
