@@ -59,7 +59,7 @@ class ProductController extends Controller
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $path = '/app/public/' . $filename;
             Image::make($image->getRealPath())->resize(300, 300)->save(storage_path($path));
-            $params['image'] = $path;
+            $params['image'] = $filename;
         }
 
         Product::create($params);
@@ -74,13 +74,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-
-//        $image_file = Image::make($product->image);
-//
-//        $response = Response::make($image_file->encode(['jpeg', 'jpg']));
-//
-//        $response->header('Content-Type', 'image/jpeg');
-//
         return view('products.details', compact('product'));
     }
 
@@ -92,6 +85,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+
         return view('products.edit', compact('product'));
     }
 

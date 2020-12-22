@@ -4,6 +4,6 @@
     <h1>Product name: {{ $product->name }}</h1>
     <h2>Price: {{ $product->price }}</h2>
     <h2>Amount: {{ $product->amount }}</h2>
-    <img src="{{ asset('../storage/').$product->image }}" alt="" width="100px;" height="100px;">
+    <img src="{{ asset('storage/'.$product->image) }}" alt="product image">
 </div>
 @endsection
