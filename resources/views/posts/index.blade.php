@@ -17,13 +17,13 @@
                 <div class="form-group row">
                     <label for="control-label" class="col-sm-2 col-form-label">Title</label>
                     <div class="col-sm-6">
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="title" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="control-label" class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-6">
-                        <textarea type="text" name="price" class="form-control" style="height: 150px;"></textarea>
+                        <textarea type="text" name="description" class="form-control" style="height: 150px;"></textarea>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-secondary" style="margin-left: 250px">ADD POST</button>
@@ -44,8 +44,8 @@
                     <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
                     <td>{{$post->description}}</td>
-                    <td class="row"><a href="{{route('posts.edit', $service)}}" class="btn btn-secondary">Edit</a>
-                        <form action="{{route('posts.destroy', $service)}}" method="post">
+                    <td class="row"><a href="{{route('posts.edit', $post)}}" class="btn btn-secondary">Edit</a>
+                        <form action="{{route('posts.destroy', $post)}}" method="post">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-secondary ml-2" onclick="return confirm('Are you sure?')" type="submit">

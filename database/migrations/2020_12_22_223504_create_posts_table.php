@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
@@ -17,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->date('posted_date')->useCurrent();
+            $table->date('posted_date')->nullable()->default(DB::raw('NOW()'));
 //            $table->binary('image');
         });
     }
