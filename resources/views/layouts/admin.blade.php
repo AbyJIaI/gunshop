@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
                 <h1 class="logo-w3layouts">
-                    <a class="navbar-brand" href="{{ route('home') }}">Admin Panel</a>
+                    <a class="navbar-brand" href="{{ route('index') }}">Admin Panel</a>
                 </h1>
             </div>
 

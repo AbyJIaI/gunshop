@@ -46,7 +46,7 @@
             </div>
             <div class="col-md-6 logo-w3layouts text-center">
                 <h1 class="logo-w3layouts">
-                    <a class="navbar-brand" href="{{ route('home') }}">
+                    <a class="navbar-brand" href="{{ route('index') }}">
                         Gunshop </a>
                 </h1>
             </div>
@@ -176,7 +176,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-mega mx-auto">
                     <li class="nav-item {{ (request()->is('/*')) ? 'active' : '' }}">
-                        <a class="nav-link ml-lg-0" href="{{ route('home') }}">Home
+                        <a class="nav-link ml-lg-0" href="{{ route('index') }}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -408,7 +408,7 @@
                 </div>
                 <ul class="links">
                     <li>
-                        <a href="{{ route('home') }}">Home</a>
+                        <a href="{{ route('index') }}">Home</a>
                     </li>
                     <li>
                         <a href="{{ route('about') }}">About</a>

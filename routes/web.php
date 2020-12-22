@@ -22,14 +22,11 @@ Route::resource('/calibertype', 'CaliberTypeController');
 Route::resource('/category', 'CategoryController');
 Route::resource('/cities', 'CityController');
 Route::resource('/products', 'ProductController');
+Route::resource('/', 'HomeController');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
-
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
 Route::get('/customer', function () {
     return view('customer');

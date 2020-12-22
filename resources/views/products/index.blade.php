@@ -14,6 +14,7 @@
         <div class="mt-4 offset-3">
             <form method="post" action="{{route('products.store')}}" enctype="multipart/form-data">
                 @csrf
+                @include('errors')
                 <div class="form-group row">
                     <label for="control-label" class="col-sm-2 col-form-label">Product name</label>
                     <div class="col-sm-4">
@@ -29,11 +30,7 @@
                 <div class="form-group row">
                     <label for="control-label" class="col-sm-2 col-form-label" >Amount:</label>
                     <div class="col-sm-4">
-                        <select class="form-control" name="amount">
-                            @for($i = 1; $i < 1000; $i++)
-                                <option value="{{ $i }}">{{ $i }}</option>
-                            @endfor
-                        </select>
+                        <input type="text" name="amount" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">

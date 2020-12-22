@@ -50,6 +50,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required|integer|min:1|max:1000000000',
+            'amount' => 'required|integer|min:1|max:10000',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
