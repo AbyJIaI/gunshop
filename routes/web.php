@@ -26,7 +26,10 @@ Route::resource('/roles', 'RoleController');
 Route::resource('/services', 'ServiceController');
 Route::resource('/posts', 'PostController');
 Route::resource('/', 'HomeController');
+Route::resource('/profile', 'UserController');
 
+
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/about', function () {
     return view('about');
@@ -43,10 +46,6 @@ Route::get('/404', function () {
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
-
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
 
 Route::get('/single', function () {
     return view('single');

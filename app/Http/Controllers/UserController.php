@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Gender;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class UserController extends Controller
 {
@@ -46,7 +50,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        $user = Auth::user();
+        $categories = Category::all();
+        $genders = Gender::all();
+        return view('profile', compact('user', 'categories', 'genders'));
     }
 
     /**
@@ -69,7 +76,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required'|'string'|'max:255',
+            'surname' => 'required'|'string'|'max:255',
+            'email' => 'required'|'string'|'email'|'max:255'|'unique:users'
+        ]);
+        Auth::user()->update($request->all());
+        return redirect()->route('profile.show', Auth::user())->with('success', 'User has been updated');
     }
 
     /**

@@ -57,7 +57,13 @@
                         @if(Auth::user()->role_id == 1)
                             <li class="button">
                                 <a class="" href="{{ route('admin') }}">
-                                    <span class="fa fa-user-secret" aria-hidden="true"></span>
+                                    <span class="fa fa-user-secret" aria-hidden="true" style="color: black"></span>
+                                </a>
+                            </li>
+                        @else
+                            <li class="button">
+                                <a class="btn-open" href="{{ route('profile.show', Auth::user()->login) }}">
+                                    <span class="fa fa-user" aria-hidden="true" style="color: black"></span>
                                 </a>
                             </li>
                         @endif
@@ -194,18 +200,6 @@
                                     <div class="col-md-4 media-list span4 text-left">
                                         <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
                                         <ul>
-                                            <li class="media-mini mt-3">
-                                                <a href="shop.blade.php">Designer Glasses</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="shop.blade.php"> Ray-Ban</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Prescription Glasses</a>
-                                            </li>
-                                            <li class="mt-3">
-                                                <h5>View more pages</h5>
-                                            </li>
                                             <li class="mt-2">
                                                 <a href="{{ route('about') }}">About</a>
                                             </li>
@@ -245,35 +239,24 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-4 media-list span4 text-left">
-                                        <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
+                                        <h5 class="tittle-w3layouts-sub mb-3"> Weapon </h5>
                                         <ul>
-                                            <li class="media-mini mt-3">
-                                                <a href="shop.blade.php">Designer Glasses</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="shop.blade.php"> Ray-Ban</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Prescription Glasses</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Rx Sunglasses</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Contact Lenses</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Multifocal Glasses</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Kids Glasses</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Lightweight Glasses</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.blade.php">Sports Glasses</a>
-                                            </li>
+                                            @if(isset($categories))
+                                            @foreach($categories as $category)
+                                                @if($category->parent_category == null)
+                                                    <li class="media-mini">
+                                                        <a href="shop.blade.php">{{ $category->name }}</a>
+                                                    </li>
+                                                    @if($category->sub_categories)
+                                                        @foreach($category->sub_categories as $sub)
+                                                            <li class="media-mini ml-5">
+                                                                <a href="shop.blade.php">{{ $sub->name }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    @endif
+                                                @endif
+                                            @endforeach
+                                            @endif
                                         </ul>
                                     </div>
                                     <div class="col-md-4 media-list span4 text-left">
