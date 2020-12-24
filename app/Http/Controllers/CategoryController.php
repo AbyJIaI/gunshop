@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Gender;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class CategoryController extends Controller
@@ -85,6 +84,7 @@ class CategoryController extends Controller
      * @param Request $request
      * @param Category $category
      * @return RedirectResponse
+     * @throws ValidationException
      */
     public function update(Request $request, Category $category)
     {
@@ -100,6 +100,7 @@ class CategoryController extends Controller
      *
      * @param Category $category
      * @return RedirectResponse
+     * @throws Exception
      */
     public function destroy(Category $category)
     {

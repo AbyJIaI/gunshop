@@ -31,4 +31,8 @@ class HomeController extends Controller
         $categories = Category::all();
         return view('home', compact('products', 'categories'));
     }
+
+    public function contact() {
+        return view('contact');
+    }
 }

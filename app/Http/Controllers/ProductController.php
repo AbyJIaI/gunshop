@@ -7,6 +7,7 @@ use App\Models\CaliberType;
 use App\Models\Category;
 use App\Models\Product;
 use Exception;
+use Illuminate\Validation\ValidationException;
 use Intervention\Image\Facades\Image;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -31,6 +32,10 @@ class ProductController extends Controller
         return view('products.index', compact('types', 'brands', 'categories', 'products'));
     }
 
+    public function shop() {
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -46,6 +51,7 @@ class ProductController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse
+     * @throws ValidationException
      */
     public function store(Request $request)
     {

@@ -17,41 +17,51 @@ class CategorySeeder extends Seeder
         if (DB::table('categories')->get()->count() == 0){
             $categories = [
                 [
-                    'name' => 'Smoothbore weapon'
+                    'name' => 'Weapon'
                 ],
                 [
-                    'name' => 'Rifled weapons'
+                    'name' => 'Smoothbore weapon',
+                    'category_id' => 1
                 ],
                 [
-                    'name' => 'Combined weapon'
+                    'name' => 'Rifled weapons',
+                    'category_id' => 1
                 ],
                 [
-                    'name' => 'Pneumatic weapon'
+                    'name' => 'Combined weapon',
+                    'category_id' => 1
                 ],
                 [
-                    'name' => 'Gas weapon'
+                    'name' => 'Pneumatic weapon',
+                    'category_id' => 1
                 ],
                 [
-                    'name' => 'Commission (used) weapon'
+                    'name' => 'Gas weapon',
+                    'category_id' => 1
                 ],
                 [
-                    'name' => 'Bows, Crossbows, Arrows'
+                    'name' => 'Commission (used) weapon',
+                    'category_id' => 1
+                ],
+                [
+                    'name' => 'Bows, Crossbows, Arrows',
+                    'category_id' => 1
                 ],
                 [
                     'name' => 'Arrows for crossbow and bow',
-                    'category_id' => 7
+                    'category_id' => 8
                 ],
                 [
                     'name' => 'Crossbows',
-                    'category_id' => 7
+                    'category_id' => 8
                 ],
                 [
                     'name' => 'Luke',
-                    'category_id' => 7
+                    'category_id' => 8
                 ],
                 [
                     'name' => 'Shooting accessories',
-                    'category_id' => 7
+                    'category_id' => 8
                 ]
             ];
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,7 @@ Route::get('/delete_cart', 'SessionController@delete')->name('delete_cart');
 
 
 Route::get('/getCategories', 'CategoryController@getCategories')->name('getCategories');
+//Route::get('/getAllProducts', '')
 Route::get('/about', function () {
     return view('about');
 })->name('about');
@@ -51,8 +53,15 @@ Route::get('/404', function () {
     return view('404');
 })->name('404');
 
-Route::get('/shop', function () {
-    return view('shop');
+Route::get('/shop/{a?}', function ($a=null) {
+    $products = Product::all();
+    if ($a == null) {
+        return view('shop', compact('products'));
+    } else if (is_int($a)) {
+        $products = Product::select('*')->where('category_id', '=', $a)->get();
+        return view('shop', compact('products'));
+    }
+    return view('shop', compact('products'));
 })->name('shop');
 
 Route::get('/single', function () {

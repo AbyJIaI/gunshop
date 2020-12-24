@@ -24,7 +24,7 @@
                     <label for="control-label" class="col-sm-2 col-form-label" >Base category:</label>
                     <div class="col-sm-4">
                         <select class="form-control" name="category_id">
-                            <option value="0">Select</option>
+                            <option value="">Select</option>
                             @isset($categories){
                                 @foreach ($categories as $category) {
                                     <option value="{{$category->id}}" {{ old('category_id') ? old('category_id') == $category->id ? 'selected' : '' : '' }} >
