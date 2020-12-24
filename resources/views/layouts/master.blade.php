@@ -232,83 +232,36 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                           data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             Shop
                         </a>
                         <ul class="dropdown-menu mega-menu ">
                             <li>
-                                <div class="row">
-                                    <div class="col-md-4 media-list span4 text-left">
-                                        <h5 class="tittle-w3layouts-sub mb-3"> Weapon </h5>
-                                        <ul>
-                                            @php($c = \App\Models\Category::hydrate($global_categories)->flatten())
-                                            @if(isset($c))
-                                            @foreach($c as $category)
-                                                @if($category->parent_category == null)
-                                                    <li class="media-mini">
-                                                        <a href="{{ route('shop') }}">{{ $category->name }}</a>
-                                                    </li>
+                                @php($c = \App\Models\Category::hydrate($global_categories)->flatten())
+                                @if(isset($c))
+                                    @php($i = 0)
+                                    <div class="row">
+                                        @foreach($c as $id => $category)
+                                            @if($category->category_id == null)
+                                                <div class="col-md-4 media-list span4 text-left">
+                                                    <a href="{{ route('shop', $category->id, $category->name) }}"><h5 class="tittle-w3layouts-sub mb-3">{{ $category->name }}</h5></a>
                                                     @if($category->sub_categories)
-                                                        @foreach($category->sub_categories as $sub)
-                                                            <li class="media-mini ml-5">
-                                                                <a href="{{ route('shop') }}">{{ $sub->name }}</a>
-                                                            </li>
-                                                        @endforeach
+                                                        <ul>
+                                                            @foreach($category->sub_categories as $sub)
+                                                                <li class="media-mini ml-5">
+                                                                    <a href="{{ route('shop', $sub->id) }}">{{ $sub->name }}</a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
                                                     @endif
-                                                @endif
-                                            @endforeach
+                                                </div>
                                             @endif
-                                        </ul>
+                                            @php($i++)
+                                        @endforeach
                                     </div>
-                                    <div class="col-md-4 media-list span4 text-left">
-                                        <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
-                                        <ul>
-                                            <li class="media-mini mt-3">
-
-                                                <a href="{{ route('shop') }}">Brooks Brothers</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Persol</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Polo Ralph Lauren</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Prada</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Ray-Ban Jr</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Sferoflex</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="sub-in text-left">
-
-                                            <li>
-                                                <a href="{{ route('shop') }}">Polo Ralph Lauren</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Prada</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Ray-Ban Jr</a>
-                                            </li>
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-md-4 media-list span4 text-left">
-
-                                        <h5 class="tittle-w3layouts-sub-nav">Tittle goes here </h5>
-                                        <div class="media-mini mt-3">
-                                            <a href="{{ route('shop') }}">
-                                                <img src="images/g1.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
+                                @endif
                                 <hr>
                             </li>
                         </ul>
