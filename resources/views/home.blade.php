@@ -120,17 +120,14 @@
                                                 </ul>
                                             </div>
                                             <div class="googles single-item hvr-outline-out">
-                                                <form action="#" method="post">
+
                                                     <input type="hidden" name="cmd" value="_cart">
                                                     <input type="hidden" name="add" value="1">
-                                                    <input type="hidden" name="googles_item" value="Farenheit">
-                                                    <input type="hidden" name="amount" value="575.00">
-                                                    <button type="submit" class="googles-cart pgoogles-cart">
+                                                    <input type="hidden" name="googles_item" value="{{ $product->name }}">
+                                                    <input type="hidden" name="amount" value="{{ $product->price }}">
+                                                    <a href="{{ route('addToCart', $product->id) }}" type="submit" class="googles-cart pgoogles-cart">
                                                         <i class="fas fa-cart-plus"></i>
-                                                    </button>
-
-                                                </form>
-
+                                                    </a>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>

@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('css/easy-responsive-tabs.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}" type="text/css" media="screen" />
     <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('css/checkout.css') }}" rel='stylesheet' type='text/css' />
     <link href="{{ asset('css/fontawesome-all.css') }}" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
@@ -82,14 +83,14 @@
                         </a>
                     </li>
                     <li class="galssescart galssescart2 cart cart box_1">
-                        <form action="#" method="post" class="last">
+
                             <input type="hidden" name="cmd" value="_cart">
                             <input type="hidden" name="display" value="1">
-                            <button class="top_googles_cart" type="submit" name="submit" value="">
+                            <a href="{{ route('checkout') }}" class="top_googles_cart" type="submit" name="submit" value="" style="color:#000;">
                                 My Cart
-                                <i class="fas fa-cart-arrow-down"></i>
-                            </button>
-                        </form>
+                                <i class="fas fa-cart-arrow-down" style="color:#000;"></i>
+                            </a>
+
                     </li>
                         @endguest
                 </ul>
@@ -473,7 +474,7 @@
 </script>
 <!-- carousel -->
 <!-- price range (top products) -->
-<script src="js/jquery-ui.js"></script>
+<script src="{{ asset('js/jquery-ui.js') }}"></script>
 <script>
     //<![CDATA[
     $(window).load(function () {
@@ -491,79 +492,129 @@
     }); //]]>
 </script>
 <!-- //price range (top products) -->
-<!-- Count-down -->
-<script src="js/simplyCountdown.js"></script>
-<link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
-<script>
-    var d = new Date();
-    simplyCountdown('simply-countdown-custom', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 2,
-        day: 25
-    });
-</script>
-<!--// Count-down -->
-<script src="js/owl.carousel.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                },
-                600: {
-                    items: 2,
-                    nav: false
-                },
-                900: {
-                    items: 3,
-                    nav: false
-                },
-                1000: {
-                    items: 4,
-                    nav: true,
-                    loop: false,
-                    margin: 20
+@if(request()->is('/'))
+    <!-- Count-down -->
+    <script src="{{ asset('js/simplyCountdown.js') }}"></script>
+    <link href="{{ asset('css/simplyCountdown.css') }}" rel='stylesheet' type='text/css' />
+    <script>
+        var d = new Date();
+        simplyCountdown('simply-countdown-custom', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 2,
+            day: 25
+        });
+    </script>
+    <!--// Count-down -->
+    <script src="{{ asset('js/owl.carousel.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    900: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
                 }
-            }
+            })
         })
-    })
-</script>
+    </script>
 
-<!-- //end-smooth-scrolling -->
+    <!-- //end-smooth-scrolling -->
+@endif
 <!-- single -->
-<script src="js/imagezoom.js"></script>
+<script src="{{ asset('js/imagezoom.js') }}"></script>
 <!-- single -->
 <!-- script for responsive tabs -->
-<script src="js/easy-responsive-tabs.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#horizontalTab').easyResponsiveTabs({
-            type: 'default', //Types: default, vertical, accordion
-            width: 'auto', //auto or any width like 600px
-            fit: true, // 100% fit in a container
-            closed: 'accordion', // Start closed if in accordion view
-            activate: function (event) { // Callback function if tab is switched
-                var $tab = $(this);
-                var $info = $('#tabInfo');
-                var $name = $('span', $info);
-                $name.text($tab.text());
-                $info.show();
-            }
+
+    <script src="{{ asset('js/easy-responsive-tabs.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
         });
-        $('#verticalTab').easyResponsiveTabs({
-            type: 'vertical',
-            width: 'auto',
-            fit: true
+    </script>
+<!--quantity-->
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('.value-plus').on('click', function () {
+        var divUpd = $(this).parent().find('.value'),
+            newVal = parseInt(divUpd.text(), 10) + 1;
+        divUpd.text(newVal);
+        var id = $(this).parent().find('.value')[0]['attributes'][1]['nodeValue'];
+        console.log(id);
+        $.ajax({
+            type: "GET",
+            url: "/set_session",
+            data: { id: id, quantity: newVal, operation: 0 },
+            success: console.log('success')
+        });
+    });
+
+    $('.value-minus').on('click', function () {
+        var divUpd = $(this).parent().find('.value'),
+            newVal = parseInt(divUpd.text(), 10) - 1;
+        if (newVal >= 1) divUpd.text(newVal);
+        var id = $(this).parent().find('.value')[0]['attributes'][1]['nodeValue'];
+        $.ajax({
+            type: "GET",
+            url: "/set_session",
+            data: { id: id, quantity: newVal, operation: 1 }
         });
     });
 </script>
+<!--close-->
+<script>
+    function hideElement(id) {
+        document.getElementById(id).hidden = true;
+        id = id.substring(3);
+        $.ajax({
+            type: "GET",
+            url: "/delete_cart",
+            data: { id: id }
+        });
+    }
+</script>
+<!--//close-->
 <!-- FlexSlider -->
-<script src="js/jquery.flexslider.js"></script>
+<script src="{{ asset('js/jquery.flexslider.js') }}"></script>
 <script>
     // Can also be used with $(document).ready()
     $(window).load(function () {
@@ -591,8 +642,8 @@
     });
 </script>
 <!-- //dropdown nav -->
-<script src="js/move-top.js"></script>
-<script src="js/easing.js"></script>
+<script src="{{ asset('js/move-top.js') }}"></script>
+<script src="{{ asset('js/easing.js') }}"></script>
 <script>
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event) {
@@ -625,7 +676,6 @@
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <!-- js file -->
 </body>
-
 </html>
 
 

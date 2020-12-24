@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Basket;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class BasketController extends Controller
@@ -15,6 +16,55 @@ class BasketController extends Controller
     public function index()
     {
         //
+    }
+
+    public function addToCart($id)
+    {
+        $product = Product::find($id);
+        if(!$product) {
+            abort(404);
+        }
+        $check = session()->get('check');
+        $cart = session()->get('cart');
+        // if cart is empty then this the first product
+        if(!$cart) {
+            $total = $product->price;
+            $cart = [
+                $id => [
+                    "name" => $product->name,
+                    "quantity" => 1,
+                    "price" => $product->price,
+                    "photo" => $product->image,
+                    "total" => $total
+                ]
+            ];
+            session()->put('check', $total);
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+        // if cart not empty then check if this product exist then increment quantity
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+            $total = $cart[$id]['price']*$cart[$id]['quantity'];
+            $cart[$id]['total'] = $total;
+            $check += $cart[$id]['price'];
+            session()->put('check', $check);
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+        // if item not exist in cart then add to cart with quantity = 1
+        $total = $product->price;
+        $cart[$id] = [
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price,
+            "photo" => $product->image,
+            "total" => $total
+        ];
+        $check += $cart[$id]['price'];
+        session()->put('check', $check);
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
     /**
@@ -44,9 +94,10 @@ class BasketController extends Controller
      * @param  \App\Models\Basket  $basket
      * @return \Illuminate\Http\Response
      */
-    public function show(Basket $basket)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view('single', compact('product'));
     }
 
     /**

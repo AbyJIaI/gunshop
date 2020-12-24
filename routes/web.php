@@ -28,8 +28,16 @@ Route::resource('/posts', 'PostController');
 Route::resource('/', 'HomeController');
 Route::resource('/profile', 'UserController');
 
+Route::get('/addToCart/{id}', 'BasketController@addToCart')->name('addToCart');
+Route::get('/showProduct/{parameters}', 'BasketController@show')->name('showProduct');
+
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
+
+Route::get('/set_session', 'SessionController@set')->name('set_session');
+Route::get('/delete_cart', 'SessionController@delete')->name('delete_cart');
+
+
 Route::get('/getCategories', 'CategoryController@getCategories')->name('getCategories');
 Route::get('/about', function () {
     return view('about');

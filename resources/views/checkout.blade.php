@@ -36,129 +36,66 @@
 								<th>Product</th>
 								<th>Quantity</th>
 								<th>Product Name</th>
-
 								<th>Price</th>
 								<th>Remove</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="rem1">
-								<td class="invert">1</td>
-								<td class="invert-image">
-									<a href="{{ route('single') }}">
-										<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s1.jpg" alt=" " class="img-responsive">
-									</a>
-								</td>
-								<td class="invert">
-									<div class="quantity">
-										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
-											<div class="entry value">
-												<span>1</span>
-											</div>
-											<div class="entry value-plus active">&nbsp;</div>
-										</div>
-									</div>
-								</td>
-								<td class="invert">Irayz Butterfly </td>
-
-								<td class="invert">$281.00</td>
-								<td class="invert">
-									<div class="rem">
-										<div class="close1"> </div>
-									</div>
-
-								</td>
-							</tr>
-							<tr class="rem2">
-								<td class="invert">2</td>
-								<td class="invert-image">
-									<a href="{{ route('single') }}">
-										<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s5.jpg" alt=" " class="img-responsive">
-									</a>
-								</td>
-								<td class="invert">
-									<div class="quantity">
-										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
-											<div class="entry value">
-												<span>1</span>
-											</div>
-											<div class="entry value-plus active">&nbsp;</div>
-										</div>
-									</div>
-								</td>
-								<td class="invert">Fastrack Aviator </td>
-
-								<td class="invert">$325.00</td>
-								<td class="invert">
-									<div class="rem">
-										<div class="close2"> </div>
-									</div>
-
-								</td>
-							</tr>
-							<tr class="rem3">
-								<td class="invert">3</td>
-								<td class="invert-image">
-									<a href="{{ route('single') }}">
-										<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/s2.jpg" alt=" " class="img-responsive">
-									</a>
-								</td>
-								<td class="invert">
-									<div class="quantity">
-										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
-											<div class="entry value">
-												<span>1</span>
-											</div>
-											<div class="entry value-plus active">&nbsp;</div>
-										</div>
-									</div>
-								</td>
-								<td class="invert">Opium (Grey)</td>
-
-								<td class="invert">$325.00</td>
-								<td class="invert">
-									<div class="rem">
-										<div class="close3"> </div>
-									</div>
-
-								</td>
-							</tr>
-
+                            @if(session('cart'))
+                                @php ($c = 1)
+                                @foreach(session('cart') as $id => $product)
+                                    <tr class="rem1" id="rem{{$id}}">
+                                        <td class="invert">{{ $c++ }}</td>
+                                        <td class="invert-image">
+                                            <a href="{{ route('showProduct', $id) }}">
+                                                <img src="{{ asset('storage/'.$product['photo']) }}" alt="image" class="img-responsive">
+                                            </a>
+                                        </td>
+                                        <td class="invert">
+                                            <div class="quantity">
+                                                <div class="quantity-select">
+                                                    <div class="entry value-minus">&nbsp;</div>
+                                                    <div class="entry value" id="{{$id}}">
+                                                        <span >{{ $product['quantity'] }}</span>
+                                                    </div>
+                                                    <div class="entry value-plus active">&nbsp;</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="invert">{{ $product['name'] }}</td>
+                                        <td class="invert">{{ $product['price'] }}</td>
+                                        <td class="invert">
+                                            <div class="rem">
+                                                <div class="close1" id="r{{$id}}" onclick="hideElement('rem' + {{$id}})"> </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
 						</tbody>
 					</table>
 				</div>
 				<div class="checkout-left row">
 					<div class="col-md-4 checkout-left-basket">
-						<h4>Continue to basket</h4>
+						<h4>Review</h4>
 						<ul>
-							<li>Product1
-								<i>-</i>
-								<span>$281.00 </span>
-							</li>
-							<li>Product2
-								<i>-</i>
-								<span>$325.00 </span>
-							</li>
-							<li>Product3
-								<i>-</i>
-								<span>$325.00 </span>
-							</li>
-							<li>Total Service Charges
-								<i>-</i>
-								<span>$55.00</span>
-							</li>
-							<li>Total
-								<i>-</i>
-								<span>$986.00</span>
-							</li>
+                            @if(session('cart'))
+                                @foreach(session('cart') as $id => $product)
+                                    <li>{{ $product['name'] }}
+                                        <i>-</i>
+                                        <span id="t{{$id}}">{{ $product['total']}}tg </span>
+                                    </li>
+                                @endforeach
+                                <li>Total
+                                    <i>-</i>
+                                    <span>{{ session()->get('check') }}tg</span>
+                                </li>
+                            @endif
 						</ul>
 					</div>
 					<div class="col-md-8 address_form">
 						<h4>Add a new Details</h4>
-						<form action="{{ route('payment') }}" method="post" class="creditly-card-form agileinfo_form">
+						<form action="{{ route('payment') }}" method="" class="creditly-card-form agileinfo_form">
 							<section class="creditly-wrapper wrapper">
 								<div class="information-wrapper">
 									<div class="first-row form-group">

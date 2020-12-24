@@ -1010,7 +1010,7 @@ span.item_price {
 	text-align: left;
 }
 
-button.googles-cart {
+a.googles-cart {
 	font-size: 1.4em;
 	color: #333;
 	border: none;

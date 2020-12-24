@@ -17,7 +17,10 @@ class BrandSeeder extends Seeder
         if (DB::table('brands')->get()->count() == 0){
             $brands = [
                 [
-                    'name' => 'Hawke'
+                    'name' => 'Sibergun'
+                ],
+                [
+                    'name' => 'Verney-carron'
                 ],
                 [
                     'name' => 'Sako'
