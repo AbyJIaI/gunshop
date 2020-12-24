@@ -30,7 +30,7 @@ Route::resource('/profile', 'UserController');
 
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
-
+Route::get('/getCategories', 'CategoryController@getCategories')->name('getCategories');
 Route::get('/about', function () {
     return view('about');
 })->name('about');

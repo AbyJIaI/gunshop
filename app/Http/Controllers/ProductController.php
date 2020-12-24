@@ -53,6 +53,9 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|integer|min:1|max:1000000000',
             'amount' => 'required|integer|min:1|max:10000',
+            'category_id' => 'required|not_in:0',
+            'brand_id' => 'required|not_in:0',
+            'caliber_id' => 'required|not_in:0',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

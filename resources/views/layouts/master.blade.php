@@ -211,7 +211,7 @@
                                     <div class="col-md-4 media-list span4 text-left">
                                         <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
                                         <div class="media-mini mt-3">
-                                            <a href="shop.blade.php">
+                                            <a href="{{ route('shop') }}">
                                                 <img src="images/g2.jpg" class="img-fluid" alt="">
                                             </a>
                                         </div>
@@ -219,7 +219,7 @@
                                     <div class="col-md-4 media-list span4 text-left">
                                         <h5 class="tittle-w3layouts-sub">Tittle goes here </h5>
                                         <div class="media-mini mt-3">
-                                            <a href="shop.blade.php">
+                                            <a href="{{ route('shop') }}">
                                                 <img src="images/g3.jpg" class="img-fluid" alt="">
                                             </a>
                                         </div>
@@ -241,16 +241,17 @@
                                     <div class="col-md-4 media-list span4 text-left">
                                         <h5 class="tittle-w3layouts-sub mb-3"> Weapon </h5>
                                         <ul>
-                                            @if(isset($categories))
-                                            @foreach($categories as $category)
+                                            @php($c = \App\Models\Category::hydrate($global_categories)->flatten())
+                                            @if(isset($c))
+                                            @foreach($c as $category)
                                                 @if($category->parent_category == null)
                                                     <li class="media-mini">
-                                                        <a href="shop.blade.php">{{ $category->name }}</a>
+                                                        <a href="{{ route('shop') }}">{{ $category->name }}</a>
                                                     </li>
                                                     @if($category->sub_categories)
                                                         @foreach($category->sub_categories as $sub)
                                                             <li class="media-mini ml-5">
-                                                                <a href="shop.blade.php">{{ $sub->name }}</a>
+                                                                <a href="{{ route('shop') }}">{{ $sub->name }}</a>
                                                             </li>
                                                         @endforeach
                                                     @endif
@@ -264,34 +265,34 @@
                                         <ul>
                                             <li class="media-mini mt-3">
 
-                                                <a href="shop.blade.php">Brooks Brothers</a>
+                                                <a href="{{ route('shop') }}">Brooks Brothers</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Persol</a>
+                                                <a href="{{ route('shop') }}">Persol</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Polo Ralph Lauren</a>
+                                                <a href="{{ route('shop') }}">Polo Ralph Lauren</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Prada</a>
+                                                <a href="{{ route('shop') }}">Prada</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Ray-Ban Jr</a>
+                                                <a href="{{ route('shop') }}">Ray-Ban Jr</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Sferoflex</a>
+                                                <a href="{{ route('shop') }}">Sferoflex</a>
                                             </li>
                                         </ul>
                                         <ul class="sub-in text-left">
 
                                             <li>
-                                                <a href="shop.blade.php">Polo Ralph Lauren</a>
+                                                <a href="{{ route('shop') }}">Polo Ralph Lauren</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Prada</a>
+                                                <a href="{{ route('shop') }}">Prada</a>
                                             </li>
                                             <li>
-                                                <a href="shop.blade.php">Ray-Ban Jr</a>
+                                                <a href="{{ route('shop') }}">Ray-Ban Jr</a>
                                             </li>
                                         </ul>
 
@@ -300,7 +301,7 @@
 
                                         <h5 class="tittle-w3layouts-sub-nav">Tittle goes here </h5>
                                         <div class="media-mini mt-3">
-                                            <a href="shop.blade.php">
+                                            <a href="{{ route('shop') }}">
                                                 <img src="images/g1.jpg" class="img-fluid" alt="">
                                             </a>
                                         </div>

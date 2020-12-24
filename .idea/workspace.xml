@@ -19,19 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Fixed name strategies">
-      <change afterPath="$PROJECT_DIR$/resources/views/roles/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/roles/index.blade.php" afterDir="false" />
+    <list default="true" id="2ec1ff15-9240-4ad0-aab4-e87cc10c3eed" name="Default Changelist" comment="Default date value = now()">
+      <change afterPath="$PROJECT_DIR$/config/global.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gunshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gunshop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CaliberTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CaliberTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CaliberType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CaliberType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PaymentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PaymentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -175,6 +172,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth/roles" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -211,7 +209,8 @@
       <workItem from="1607616038203" duration="9790000" />
       <workItem from="1607694869941" duration="21597000" />
       <workItem from="1608309549612" duration="3467000" />
-      <workItem from="1608644052835" duration="5438000" />
+      <workItem from="1608644052835" duration="13866000" />
+      <workItem from="1608796663708" duration="6096000" />
     </task>
     <task id="LOCAL-00001" summary="about route">
       <created>1605591834773</created>
@@ -318,7 +317,35 @@
       <option name="project" value="LOCAL" />
       <updated>1607760176065</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Some fixes">
+      <created>1608653426874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608653426874</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Some fixes">
+      <created>1608660374148</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608660374148</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Switch between admin to home">
+      <created>1608660828490</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608660828491</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Default date value = now()">
+      <created>1608661970894</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608661970894</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,28 +378,31 @@
     <MESSAGE value="Fixed relations, added edit blades" />
     <MESSAGE value="Rewrite role id by relation" />
     <MESSAGE value="Fixed name strategies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed name strategies" />
+    <MESSAGE value="Some fixes" />
+    <MESSAGE value="Switch between admin to home" />
+    <MESSAGE value="Default date value = now()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default date value = now()" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="473" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607759592513">
+    <state x="473" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608654758617">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="473" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1607759592513" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608645524943">
+    <state x="473" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1608654758617" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608799804559">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608645524943" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608799804559" />
     <state x="474" y="369" key="ComposerInitDialogKey" timestamp="1607334562385">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="474" y="369" key="ComposerInitDialogKey/0.0.1440.900@0.0.1440.900" timestamp="1607334562385" />
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1608647782840">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1608797405746">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1608647620536" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1608797405746" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.830@0.23.1440.830" timestamp="1607628079950" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.831@0.23.1440.831" timestamp="1608647782840" />
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.832@0.23.1440.832" timestamp="1607719076952" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.832@0.23.1440.832" timestamp="1608661812678" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.834@0.23.1440.834" timestamp="1607365930301" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.835@0.23.1440.835" timestamp="1607394662547" />
     <state x="592" y="354" key="Github.ShareDialog" timestamp="1605591163766">
@@ -399,27 +429,39 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607365225073" />
-    <state x="144" y="79" key="MergeDialog" timestamp="1608647545800">
+    <state x="588" y="390" key="Laravel.ExtractPartialViewDialog" timestamp="1608803091328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1608647545800" />
+    <state x="588" y="390" key="Laravel.ExtractPartialViewDialog/0.0.1440.900@0.0.1440.900" timestamp="1608803091328" />
+    <state x="144" y="79" key="MergeDialog" timestamp="1608656393764">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1608656393764" />
     <state x="144" y="96" key="MergeDialog/0.23.1440.831@0.23.1440.831" timestamp="1607750986187" />
     <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1607695030091">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607695030091" />
+    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1608798656291">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1608798656291" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1608800048000">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1608800048000" />
     <state x="571" y="370" key="VCS.ChangelistChooser" timestamp="1607751059726">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="571" y="370" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1607751059726" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1607760180533">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1608661972802">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607760180533" />
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608653322147">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1608661972802" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608804267587">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1608653322147" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1608804267587" />
     <state x="563" y="230" key="refactoring.ChangeSignatureDialog" timestamp="1607639817467">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

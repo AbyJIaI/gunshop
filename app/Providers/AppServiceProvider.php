@@ -14,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        view()->composer('*', function ($view) {
+            $view->with('global_categories', config('global.categories'));
+        });
         Factory::guessFactoryNamesUsing(function ($class) {
             return 'Database\\Factories\\' . class_basename($class) . 'Factory';
         });

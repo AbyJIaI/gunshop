@@ -35,30 +35,17 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="control-label" class="col-sm-2 col-form-label" >Base category:</label>
+                    <label for="control-label" class="col-sm-2 col-form-label" >Category:</label>
                     <div class="col-sm-4">
                         <select class="form-control" name="category_id">
-                            {{-- @if($categories!=null){
-                            @foreach ($categories as $category) {
-                            <option value="{{$category->id}}">{{ $category->name }}</option>
-                            @endforeach
-                            @endif --}}
-                            <option value="">Select</option>
-                            <option value="">Base class1</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="control-label" class="col-sm-2 col-form-label" >Sub category:</label>
-                    <div class="col-sm-4">
-                        <select class="form-control" name="category_id">
-                            {{-- @if($categories!=null){
-                            @foreach ($categories as $category) {
-                            <option value="{{$category->id}}">{{ $category->name }}</option>
-                            @endforeach
-                            @endif --}}
-                            <option value="">Select</option>
-                            <option value="">Base class1</option>
+                            <option value="0">Select</option>
+                            @if(isset($categories)){
+                                @foreach ($categories as $category) {
+                                    <option value="{{$category->id}}" {{ old('category_id') ? old('category_id') == $category->id ? 'selected' : '' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
                 </div>
@@ -66,10 +53,12 @@
                     <label for="control-label" class="col-sm-2 col-form-label" >Brand:</label>
                     <div class="col-sm-4">
                         <select class="form-control" name="brand_id">
-                            <option value="">Select</option>
+                            <option value="0">Select</option>
                             @if($brands!=null){
                                 @foreach ($brands as $brand) {
-                                    <option value="{{$brand->id}}">{{ $brand->name }}</option>
+                                    <option value="{{$brand->id}}" {{ old('brand_id') ? old('brand_id') == $brand->id ? 'selected' : '' : '' }}>
+                                        {{ $brand->name }}
+                                    </option>
                                 @endforeach
                             @endif
                         </select>
@@ -79,13 +68,14 @@
                     <label for="control-label" class="col-sm-2 col-form-label" >Caliber type:</label>
                     <div class="col-sm-4">
                         <select class="form-control" name="caliber_id">
-                            {{-- @if($types!=null){
-                            @foreach ($types as $type) {
-                            <option value="{{$type->id}}">{{ $type->name }}</option>
-                            @endforeach
-                            @endif --}}
-                            <option value="">Select</option>
-                            <option value="">243 rem</option>
+                            <option value="0">Select</option>
+                            @if($types!=null){
+                                @foreach ($types as $type) {
+                                    <option value="{{$type->id}}" {{ old('type_id') ? old('type_id') == $type->id ? 'selected' : '' : '' }}>
+                                        {{ $type->name }}
+                                    </option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
                 </div>

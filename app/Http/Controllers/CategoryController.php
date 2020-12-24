@@ -37,6 +37,10 @@ class CategoryController extends Controller
         return view('categories.index', compact('categories'));
     }
 
+    public static function getCategories() {
+        return Category::all();
+    }
+
     /**
      * Store a newly created resource in storage.
      *
