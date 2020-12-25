@@ -74,17 +74,17 @@
 									</div>
 									<div class="occasion-cart">
 											<div class="googles single-item singlepage">
-													<form action="{{ route('addToCart', $product->id) }}" method="get">
-                                                        @csrf
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="googles_item" value="{{ $product->name }}">
-                                                        <input type="hidden" name="amount" value="{{ $product->price }}">
-                                                        <button type="submit" class="googles-cart pgoogles-cart">
-															Add to Cart <i class="fas fa-cart-plus"></i>
-														</button>
-													</form>
-												</div>
+                                                <form action="{{ route('addToCart', $product->id) }}" method="get">
+                                                    @csrf
+                                                    <input type="hidden" name="cmd" value="_cart">
+                                                    <input type="hidden" name="add" value="1">
+                                                    <input type="hidden" name="googles_item" value="{{ $product->name }}">
+                                                    <input type="hidden" name="amount" value="{{ $product->price }}">
+                                                    <button type="submit" class="googles-cart pgoogles-cart">
+                                                        Add to Cart <i class="fas fa-cart-plus"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
 									</div>
 									<ul class="footer-social text-left mt-lg-4 mt-3">
 											<li>Share On : </li>
