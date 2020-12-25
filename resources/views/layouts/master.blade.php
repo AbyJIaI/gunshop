@@ -397,6 +397,35 @@
 <script src="{{ asset('js/classie-search.js') }}"></script>
 <script src="{{ asset('js/demo1-search.js') }}"></script>
 <!--//search jQuery-->
+<!-- cart-js -->
+<script src="{{ asset('js/minicart.js') }}"></script>
+<script>
+    googles.render();
+
+    googles.cart.on('googles_checkout', function (evt) {
+        var items, len, i;
+
+        if (this.subtotal() > 0) {
+            items = this.items();
+
+            for (i = 0, len = items.length; i < len; i++) {}
+        }
+    });
+</script>
+<!-- //cart-js -->
+<script>
+    $(document).ready(function () {
+        $(".button-log a").click(function () {
+            $(".overlay-login").fadeToggle(200);
+            $(this).toggleClass('btn-open').toggleClass('btn-close');
+        });
+    });
+    $('.overlay-close1').on('click', function () {
+        $(".overlay-login").fadeToggle(200);
+        $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+        open = false;
+    });
+</script>
 <!-- carousel -->
 <!-- price range (top products) -->
 <script src="{{ asset('js/jquery-ui.js') }}"></script>
