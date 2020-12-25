@@ -105,6 +105,9 @@
                     <li class="nav-item {{ (request()->is('/products')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                     </li>
+                    <li class="nav-item {{ (request()->is('/comment')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('comment.index') }}">Comments</a>
+                    </li>
                 </ul>
             </div>
         </nav>

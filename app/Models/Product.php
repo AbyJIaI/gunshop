@@ -26,7 +26,7 @@ class Product extends Model
     }
 
     public function comments() {
-        return $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Models\Comment')->where('accepted' , "=", true);
     }
 
     protected $fillable = ['name', 'category_id', 'brand_id', 'caliber_id', 'price', 'amount', 'image'];

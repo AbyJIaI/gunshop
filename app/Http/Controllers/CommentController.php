@@ -14,7 +14,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::all();
+        return view('comments.index', compact('comments'));
     }
 
     /**
@@ -61,7 +62,9 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        $comment->setAttribute('accepted', true);
+        $comment->update();
+        return redirect()->back()->with('success', 'Comment is added');
     }
 
     /**
@@ -84,6 +87,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->setAttribute('accepted', false);
+        $comment->update();
+        return redirect()->back()->with('success', 'Comment is deleted');
     }
 }

@@ -34,6 +34,7 @@ Route::resource('/comment', 'CommentController');
 Route::get('/addToCart/{id}', 'BasketController@addToCart')->name('addToCart');
 Route::get('/showProduct/{parameters}', 'BasketController@show')->name('showProduct');
 
+Route::post('/search', 'ProductController@search')->name('search');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
@@ -59,7 +60,7 @@ Route::get('/shop/{a?}', function ($a=null) {
     $products = Product::all();
     if ($a == null) {
         return view('shop', compact('products'));
-    } else if (is_int($a)) {
+    } else if (intval($a) != 0) {
         $products = Product::select('*')->where('category_id', '=', $a)->get();
         return view('shop', compact('products'));
     }

@@ -161,8 +161,9 @@
                 <button type="button" class="overlay-close">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
-                <form action="#" method="post" class="d-flex">
-                    <input class="form-control" type="search" placeholder="Search here..." required="">
+                <form action="{{ route('search') }}" method="post" class="d-flex">
+                    @csrf
+                    <input class="form-control" type="search" placeholder="Search here..." name="name">
                     <button type="submit" class="btn btn-primary submit">
                         <i class="fas fa-search"></i>
                     </button>

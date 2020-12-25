@@ -129,4 +129,10 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Product has been deleted');
     }
+
+    public function search(Request $request) {
+
+        $products = Product::where('name','LIKE',"%{$request->input('name')}%")->get();
+        return view('shop', compact('products'));
+    }
 }

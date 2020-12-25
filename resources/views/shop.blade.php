@@ -27,28 +27,15 @@
                     <div class="side-bar col-lg-3">
                         <div class="search-hotel">
                             <h3 class="agileits-sear-head">Search Here..</h3>
-                            <form action="#" method="post">
-                                <input class="form-control" type="search" name="search" placeholder="Search here..."
-                                       required="">
-                                <button class="btn1">
+                            <form action="{{ route('search') }}" method="post">
+                                @csrf
+                                <input class="form-control" type="search" name="name" placeholder="Search here...">
+                                <button class="btn1" type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
                                 <div class="clearfix"></div>
                             </form>
                         </div>
-                        <!-- price range -->
-                        <div class="range">
-                            <h3 class="agileits-sear-head">Price range</h3>
-                            <ul class="dropdown-menu6">
-                                <li>
-
-                                    <div id="slider-range"></div>
-                                    <input type="text" id="amount"
-                                           style="border: 0; color: #ffffff; font-weight: normal;"/>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- //price range -->
                         <!-- deals -->
                         <div class="deal-leftmk left-side">
                             <h3 class="agileits-sear-head">Special Deals</h3>
