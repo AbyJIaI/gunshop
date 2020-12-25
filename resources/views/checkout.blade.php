@@ -27,7 +27,7 @@
 				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
 				<div class="checkout-right">
 					<h4>Your shopping cart contains:
-						<span>3 Products</span>
+						<span id="count">{{ count(session('cart')) }} Products</span>
 					</h4>
 					<table class="timetable_sub">
 						<thead>
@@ -77,9 +77,9 @@
 				</div>
 				<div class="checkout-left row">
 					<div class="col-md-4 checkout-left-basket">
-						<h4>Review</h4>
-						<ul>
-                            @if(session('cart'))
+                        @if(session('cart'))
+                            <h4>Review</h4>
+                            <ul>
                                 @foreach(session('cart') as $id => $product)
                                     <li>{{ $product['name'] }}
                                         <i>-</i>
@@ -90,12 +90,15 @@
                                     <i>-</i>
                                     <span>{{ session()->get('check') }}tg</span>
                                 </li>
-                            @endif
-						</ul>
+                            </ul>
+                        @endif
 					</div>
-					<div class="col-md-8 address_form">
+                    @if(session('cart'))
+					    <div class="col-md-8 address_form">
 						<h4>Add a new Details</h4>
-						<form action="{{ route('payment') }}" method="" class="creditly-card-form agileinfo_form">
+                            @include('errors')
+						<form action="{{ route('payment') }}" method="get" class="creditly-card-form agileinfo_form">
+                            @csrf
 							<section class="creditly-wrapper wrapper">
 								<div class="information-wrapper">
 									<div class="first-row form-group">
@@ -107,28 +110,28 @@
 											<div class="card_number_grid_left">
 												<div class="controls">
 													<label class="control-label">Mobile number:</label>
-													<input class="form-control" type="text" placeholder="Mobile number">
+													<input class="form-control" type="text" name="phone" placeholder="Mobile number">
 												</div>
 											</div>
 											<div class="card_number_grid_right">
 												<div class="controls">
-													<label class="control-label">Landmark: </label>
-													<input class="form-control" type="text" placeholder="Landmark">
+													<label class="control-label">Email: </label>
+													<input class="form-control" type="email" name="email" placeholder="Email">
 												</div>
 											</div>
 											<div class="clear"> </div>
 										</div>
 										<div class="controls">
 											<label class="control-label">Town/City: </label>
-											<input class="form-control" type="text" placeholder="Town/City">
+											<input class="form-control" type="text" name="city" placeholder="Town/City">
 										</div>
 										<div class="controls">
 											<label class="control-label">Address type: </label>
-											<select class="form-control option-w3ls">
-												<option>Office</option>
-												<option>Home</option>
-												<option>Commercial</option>
-
+											<select class="form-control option-w3ls" name="address">
+                                                <option value="">Select</option>
+                                                <option value="1">Office</option>
+												<option value="2">Home</option>
+												<option value="3">Commercial</option>
 											</select>
 										</div>
 									</div>
@@ -136,13 +139,9 @@
 								</div>
 							</section>
 						</form>
-						<div class="checkout-right-basket">
-							<a href="{{ route('payment') }}">Make a Payment </a>
-						</div>
 					</div>
-
-					<div class="clearfix"> </div>
-
+					    <div class="clearfix"> </div>
+                    @endif
 				</div>
 
 			</div>

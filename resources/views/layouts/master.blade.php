@@ -68,13 +68,6 @@
                                 </a>
                             </li>
                         @endif
-                        <li class="button-log">
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-dark btn-sm">
-                                <span class="fa fa-sign-out-alt" aria-hidden="true"></span></button>
-                        </form>
-                        </li>
                     @endauth
                     @guest
                     <li class="button-log">
@@ -82,17 +75,24 @@
                             <span class="fa fa-user" aria-hidden="true"></span>
                         </a>
                     </li>
-                    <li class="galssescart galssescart2 cart cart box_1">
-
-                            <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="display" value="1">
-                            <a href="{{ route('checkout') }}" class="top_googles_cart" type="submit" name="submit" value="" style="color:#000;">
-                                My Cart
-                                <i class="fas fa-cart-arrow-down" style="color:#000;"></i>
-                            </a>
-
-                    </li>
                         @endguest
+                    <li class="galssescart galssescart2 cart cart box_1">
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="display" value="1">
+                        <a href="{{ route('checkout') }}" class="top_googles_cart" type="submit" name="submit" value="" style="color:#000;">
+                            My Cart
+                            <i class="fas fa-cart-arrow-down" style="color:#000;"></i>
+                        </a>
+                    </li>
+                    @auth
+                            <li class="button-log">
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-dark btn-sm">
+                                        <span class="fa fa-sign-out-alt" aria-hidden="true"></span></button>
+                                </form>
+                            </li>
+                        @endauth
                 </ul>
                 <!---->
                 <div class="overlay-login text-left">
@@ -396,35 +396,6 @@
 <script src="{{ asset('js/classie-search.js') }}"></script>
 <script src="{{ asset('js/demo1-search.js') }}"></script>
 <!--//search jQuery-->
-<!-- cart-js -->
-<script src="{{ asset('js/minicart.js') }}"></script>
-<script>
-    googles.render();
-
-    googles.cart.on('googles_checkout', function (evt) {
-        var items, len, i;
-
-        if (this.subtotal() > 0) {
-            items = this.items();
-
-            for (i = 0, len = items.length; i < len; i++) {}
-        }
-    });
-</script>
-<!-- //cart-js -->
-<script>
-    $(document).ready(function () {
-        $(".button-log a").click(function () {
-            $(".overlay-login").fadeToggle(200);
-            $(this).toggleClass('btn-open').toggleClass('btn-close');
-        });
-    });
-    $('.overlay-close1').on('click', function () {
-        $(".overlay-login").fadeToggle(200);
-        $(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
-        open = false;
-    });
-</script>
 <!-- carousel -->
 <!-- price range (top products) -->
 <script src="{{ asset('js/jquery-ui.js') }}"></script>

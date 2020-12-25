@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
+use App\Models\PaymentType;
 use App\Models\Product;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -34,5 +36,18 @@ class HomeController extends Controller
 
     public function contact() {
         return view('contact');
+    }
+
+    public function payment(Request $request) {
+        $this->validate($request,[
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'city' => 'required',
+            'address' => 'required'
+        ]);
+        //Order::create($request->all());
+        $types = PaymentType::all();
+        return view('payment', compact('types'))->with('success', 'Order is added');
     }
 }

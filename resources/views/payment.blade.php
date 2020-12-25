@@ -27,13 +27,14 @@
 					<div class="responsive_tabs">
 						<div id="horizontalTab">
 							<ul class="resp-tabs-list">
-								<li>Cash on delivery (COD)</li>
-								<li>Credit/Debit</li>
-								<li>Net Banking</li>
-								<li>Paypal Account</li>
+                                @if(isset($types))
+                                    @foreach($types as $type)
+                                        <li>{{ $type->name }}</li>
+                                    @endforeach
+                                @endif
 							</ul>
 							<div class="resp-tabs-container">
-								<!--/tab_one-->
+                                @if(isset($types))
 								<div class="tab1">
 									<div class="pay_info">
 										<div class="vertical_post check_box_agile">
@@ -41,7 +42,6 @@
 											<div class="checkbox">
 												<div class="check_box_one cashon_delivery">
 													<label class="anim">
-														<input type="checkbox" class="checkbox">
 														<span> We also accept Credit/Debit card on delivery. Please Check with the agent.</span>
 													</label>
 												</div>
@@ -49,12 +49,11 @@
 											</div>
 										</div>
 									</div>
-
 								</div>
-								<!--//tab_one-->
 								<div class="tab2">
 									<div class="pay_info">
-										<form action="#" method="post" class="creditly-card-form agileinfo_form">
+										<form action="#" method="get" class="creditly-card-form agileinfo_form">
+                                            @csrf
 											<section class="creditly-wrapper wthree, w3_agileits_wrapper">
 												<div class="credit-card-wrapper">
 													<div class="first-row form-group">
@@ -66,7 +65,7 @@
 															<div class="w3_agileits_card_number_grid_left">
 																<div class="controls">
 																	<label class="control-label">Card Number</label>
-																	<input class="number credit-card-number form-control" type="text" name="number" inputmode="numeric" autocomplete="cc-number"
+																	<input class="number credit-card-number form-control" type="text" name="card" inputmode="numeric" autocomplete="cc-number"
 																	    autocompletetype="cc-number" x-autocompletetype="cc-number" placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">
 																</div>
 															</div>
@@ -83,9 +82,7 @@
 															<input class="expiration-month-and-year form-control" type="text" name="expiration-month-and-year" placeholder="MM / YY">
 														</div>
 													</div>
-													<button class="submit">
-														<span>Make a payment </span>
-													</button>
+													<input class="payment" type="submit" value="MAKE A PAYMENT">
 												</div>
 											</section>
 										</form>
@@ -96,7 +93,8 @@
 
 									<div class="pay_info">
 										<div class="vertical_post">
-											<form action="#" method="post">
+											<form action="#" method="get">
+                                                @csrf
 												<h5>Select From Popular Banks</h5>
 												<div class="swit-radio">
 													<div class="check_box_one">
@@ -185,51 +183,12 @@
 														<option value="VJB-NA">Vijaya Bank NetBanking</option>
 													</select>
 												</div>
-												<input type="submit" value="PAY NOW">
+												<input class="payment" type="submit" value="PAY NOW">
 											</form>
 										</div>
 									</div>
 								</div>
-								<div class="tab4">
-									<div class="pay_info row">
-										<div class="col-md-6 tab-grid">
-											<img class="pp-img" src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/paypal.png" alt="Image Alternative text" title="Image Title">
-											<p>Important: You will be redirected to PayPal's website to securely complete your payment.</p>
-											<a class="btn btn-primary">Checkout via Paypal</a>
-										</div>
-										<div class="col-md-6">
-										<form action="#" method="post" class="cc-form">
-												<div class="clearfix">
-													<div class="form-group form-group-cc-number">
-														<label>Card Number</label>
-														<input class="form-control" placeholder="xxxx xxxx xxxx xxxx" type="text">
-														<span class="cc-card-icon"></span>
-													</div>
-													<div class="form-group form-group-cc-cvc">
-														<label>CVV</label>
-														<input class="form-control" placeholder="xxxx" type="text">
-													</div>
-												</div>
-												<div class="clearfix">
-													<div class="form-group form-group-cc-name">
-														<label>Card Holder Name</label>
-														<input class="form-control" type="text">
-													</div>
-													<div class="form-group form-group-cc-date">
-														<label>Valid Thru</label>
-														<input class="form-control" placeholder="mm/yy" type="text">
-													</div>
-												</div>
-												<div class="checkbox checkbox-small mt-4">
-													<label>
-														<input class="i-check" type="checkbox" checked="">Add to My Cards</label>
-												</div>
-												<input class="btn btn-primary submit mt-4" type="submit" value="Proceed Payment">
-											</form>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
+                                @endif
 							</div>
 						</div>
 					</div>
@@ -241,3 +200,18 @@
 		</section>
 		<!--//Payment-->
 @endsection
+<script>
+    function checkInputs(){
+        var flag = 0;
+        $('input').each(function() {
+            if($(this).val() == ''){
+                return flag = 1;
+            }
+        });
+        return flag;
+    }
+
+    $('.payment').click(function() {
+        alert(checkInputs());
+    });
+</script>

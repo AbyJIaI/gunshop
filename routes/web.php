@@ -36,6 +36,7 @@ Route::get('/showProduct/{parameters}', 'BasketController@show')->name('showProd
 
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/payment','HomeController@payment')->name('payment');
 
 Route::get('/set_session', 'SessionController@set')->name('set_session');
 Route::get('/delete_cart', 'SessionController@delete')->name('delete_cart');
@@ -69,10 +70,6 @@ Route::get('/shop/{a?}', function ($a=null) {
 Route::get('/single', function () {
     return view('single');
 })->name('single');
-
-Route::get('/payment', function () {
-    return view('payment');
-})->name('payment');
 
 Route::get('/checkout', function () {
     return view('checkout');
