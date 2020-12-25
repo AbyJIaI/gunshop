@@ -28,6 +28,8 @@ Route::resource('/services', 'ServiceController');
 Route::resource('/posts', 'PostController');
 Route::resource('/', 'HomeController');
 Route::resource('/profile', 'UserController');
+Route::resource('/comment', 'CommentController');
+
 
 Route::get('/addToCart/{id}', 'BasketController@addToCart')->name('addToCart');
 Route::get('/showProduct/{parameters}', 'BasketController@show')->name('showProduct');

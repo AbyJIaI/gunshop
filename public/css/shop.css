@@ -1382,7 +1382,7 @@ span.item_price {
 		top: 16.9%;
 		width: 420px;
 	}
-    button.googles-cart {
+    a.googles-cart {
        font-size: 1em;
     }
 }

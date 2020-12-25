@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\CaliberType;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Product;
 use Exception;
 use Illuminate\Validation\ValidationException;
@@ -87,7 +88,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('single', compact('product'));
+        $comments = $product->comments;
+        return view('single', compact('product', 'comments'));
     }
 
     /**

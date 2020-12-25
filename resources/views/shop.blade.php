@@ -121,7 +121,7 @@
                                                             <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid" alt="">
                                                             <div class="men-cart-pro">
                                                                 <div class="inner-men-cart-pro">
-                                                                    <a href="{{ route('single', $product) }}" class="link-product-add-cart">Quick
+                                                                    <a href="{{ route('products.show', $product) }}" class="link-product-add-cart">Quick
                                                                         View</a>
                                                                 </div>
                                                             </div>
@@ -132,7 +132,7 @@
                                                                 <div class="grid_meta">
                                                                     <div class="product_price">
                                                                         <h4>
-                                                                            <a href="{{ route('single', $product) }}">{{ $product->name }}</a>
+                                                                            <a href="{{ route('products.show', $product) }}">{{ $product->name }}</a>
                                                                         </h4>
                                                                         <div class="grid-price mt-2">
                                                                             <span class="money ">{{ $product->price }} tng</span>
@@ -208,7 +208,7 @@
                                                         class="img-fluid" alt="">
                                                     <div class="men-cart-pro">
                                                         <div class="inner-men-cart-pro">
-                                                            <a href="single.blade.php" class="link-product-add-cart">Quick
+                                                            <a href="#" class="link-product-add-cart">Quick
                                                                 View</a>
                                                         </div>
                                                     </div>

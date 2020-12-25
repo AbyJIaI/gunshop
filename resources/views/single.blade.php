@@ -74,13 +74,14 @@
 									</div>
 									<div class="occasion-cart">
 											<div class="googles single-item singlepage">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="googles_item" value="Farenheit">
-														<input type="hidden" name="amount" value="575.00">
+													<form action="{{ route('addToCart', $product->id) }}" method="get">
+                                                        @csrf
+                                                        <input type="hidden" name="cmd" value="_cart">
+                                                        <input type="hidden" name="add" value="1">
+                                                        <input type="hidden" name="googles_item" value="{{ $product->name }}">
+                                                        <input type="hidden" name="amount" value="{{ $product->price }}">
                                                         <button type="submit" class="googles-cart pgoogles-cart">
-															Add to Cart
+															Add to Cart <i class="fas fa-cart-plus"></i>
 														</button>
 													</form>
 												</div>
@@ -124,7 +125,7 @@
 											<li>Description</li>
 											<li>Reviews</li>
 										</ul>
-										<div class="resp-tabs-container">
+										<div class="resp-tabs-container" style="width: 1140px;">
 											<!--/tab_one-->
 											<div class="tab1">
 
@@ -146,29 +147,42 @@
 												<div class="single_page">
 													<div class="bootstrap-tab-text-grids">
 														<div class="bootstrap-tab-text-grid">
-															<div class="bootstrap-tab-text-grid-left">
-																<img src="../../../../../Downloads/goggles-web_Free07-08-2018_1255464790/web/images/team1.jpg" alt=" " class="img-fluid">
-															</div>
-															<div class="bootstrap-tab-text-grid-right">
-																<ul>
-																	<li><a href="#">Admin</a></li>
-																	<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
-																</ul>
-																<p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget.Ut enim ad minima veniam,
-																	quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-																	autem vel eum iure reprehenderit.</p>
-															</div>
-															<div class="clearfix"> </div>
+															@if(isset($comments))
+                                                                @foreach($comments as $comment)
+                                                                <div class="bootstrap-tab-text-grid-left">
+                                                                    <img src="{{ asset('storage/user_icon.png') }}" alt=" " class="img-fluid">
+                                                                </div>
+                                                                <div class="bootstrap-tab-text-grid-right">
+                                                                    <ul>
+                                                                        <li><a href="#">{{ $comment->user->name.' '.$comment->user->surname }}</a></li>
+                                                                        <li><i class="" aria-hidden="true"></i> {{ $comment->created_at->format('d M Y H:i:s') }}</li>
+                                                                    </ul>
+                                                                    <p>{{ $comment->text }}</p>
+                                                                </div>
+                                                                <div class="clearfix"> </div>
+                                                                @endforeach
+                                                            @endif
 														</div>
-														<div class="add-review">
-															<h4>add a review</h4>
-															<form action="#" method="post">
-																	<input class="form-control" type="text" name="Name" placeholder="Enter your email..." required="">
-																<input class="form-control" type="email" name="Email" placeholder="Enter your email..." required="">
-																<textarea name="Message" required=""></textarea>
-																<input type="submit" value="SEND">
-															</form>
-														</div>
+														@auth()
+                                                            <div class="add-review">
+                                                                <h4>add a review</h4>
+                                                                <form action="{{ route('comment.store') }}" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                                                    <input type="hidden" name="product_id" value="{{ request()->segment(count(request()->segments())) }}">
+                                                                    <textarea name="text"></textarea>
+                                                                    <input type="submit" value="SEND">
+                                                                </form>
+                                                            </div>
+                                                        @endauth
+                                                        @guest()
+                                                            <p class="button-log">If you want to send comments, please
+                                                                <a class="btn-open" href="#">
+                                                                    <b>sign in</b>
+                                                                </a>
+                                                            </p>
+                                                        @endguest
+
 													</div>
 
 												</div>
